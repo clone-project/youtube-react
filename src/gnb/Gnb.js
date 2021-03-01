@@ -1,8 +1,6 @@
-import React from 'react';
 import "./Gnb.scss";
 
-class Gnb extends React.Component {
-  render() {
+function Gnb() {
     return (
       <header className="gnb">
         <div className="left_section">
@@ -454,7 +452,6 @@ class Gnb extends React.Component {
         </div>
       </header>
     )
-  }
 }
 
 export default Gnb;

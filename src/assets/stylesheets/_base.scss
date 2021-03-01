@@ -12,6 +12,7 @@ em,address {font-style:normal;}
 a {text-decoration:none;cursor: pointer;}
 button {cursor:pointer;border:0;-webkit-border-radius:0;border-radius:0;background-color:transparent;}
 .blind {overflow:hidden;position:absolute;clip:rect(0 0 0 0);width:1px;height:1px;margin:-1px;}
+
 /* skip navigation */
 #u_skip{position:relative;z-index:2147483647}
 #u_skip a{position:absolute;left:-130px;top:-50px;width:128px;background:url(https://ssl.pstatic.net/static/common/sp_u_skip.png) repeat-x 0 -11px;border:1px solid #4ec53d;font-size:11px;letter-spacing:-1px;color:#fff;line-height:26px;text-align:center;outline:none}

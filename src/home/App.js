@@ -1,5 +1,7 @@
 import React from 'react';
 import Gnb from "../gnb/Gnb.js"
+import MiniSidebar from "../mini-sidebar/MiniSidebar.js"
+import Sidebar from "../sidebar/Sidebar.js"
 import "./App.scss";
 
 class App extends React.Component {
@@ -8,6 +10,8 @@ class App extends React.Component {
       <div className="App">
         <Gnb />
         <div className="container">
+          <MiniSidebar />
+          <Sidebar />
           <div id="content" className="content">
             <h2 className="blind">홈</h2>
             <div className="ad_section">
