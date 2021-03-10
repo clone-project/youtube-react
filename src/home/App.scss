@@ -46,61 +46,6 @@
     }
   }
 }
-.ad_section {
-  margin-bottom: 32px;
-  padding: 32px 24px;
-  background-color: #fff;
-
-  .section_inner {
-    position: relative;
-    width: 214px;
-    max-width: 1284px;
-    height: 260px - (32px * 2);
-    margin: 0 auto;
-
-    @include mq-min-474 {
-      width: 428px;
-    }
-    @include mq-min-513 {
-      width: 100%;
-    }
-  }
-  .image_premium {
-    width: 320px;
-    height: 24px;
-  }
-  .ad_title {
-    display: block;
-    margin-top: 8px;
-    font-size: 26px;
-    line-height: 30px;
-    color: #131313;
-    font-weight: 400;
-  }
-  .link_ad {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding: 10px 16px;
-    border: 2px solid #065fd4;
-    font-size: 14px;
-    height: 19px;
-    color: #065fd4;
-    align-self: end;
-  }
-  .button_close {
-    position: absolute;
-    top: -24px;
-    right: -24px + 13px;
-    background-color: rgba(255, 255, 255, 0.7);
-  }
-  .icon_close {
-    display: block;
-    width: 24px;
-    height: 24px;
-    fill: rgba(0, 0, 0, 0.8);
-  }
-}
 .section {
   @include mq-min-601 {
     margin: 0 24px;

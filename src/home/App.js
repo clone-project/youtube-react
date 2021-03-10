@@ -1,7 +1,8 @@
 import React from 'react';
-import Gnb from "../gnb/Gnb.js"
-import MiniSidebar from "../mini-sidebar/MiniSidebar.js"
-import Sidebar from "../sidebar/Sidebar.js"
+import Gnb from "../components/gnb/Gnb.js"
+import MiniSidebar from "../components/mini-sidebar/MiniSidebar.js"
+import Sidebar from "../components/sidebar/Sidebar.js"
+import AdSection from "./ad-section/AdSection.js"
 import "./App.scss";
 
 class App extends React.Component {
@@ -14,22 +15,7 @@ class App extends React.Component {
           <Sidebar />
           <div id="content" className="content">
             <h2 className="blind">홈</h2>
-            <div className="ad_section">
-              <div className="section_inner">
-                <h3 className="blind">광고</h3>
-                <img src="https://www.gstatic.com/youtube/img/promos/growth/864dc47e45a7a0b06602f73155980de282b939a6d0adc7bdcda231f965bf796a_640x48.png" className="image_premium" alt="" />
-                <strong className="ad_title">좋⁠아⁠하⁠는 콘⁠텐⁠츠⁠를 광⁠고 없⁠이 즐⁠기⁠세⁠요</strong>
-                <a href="#" className="link_ad">1개월 무료체험</a>
-                <button type="button" className="button_close">
-                  <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="icon_close">
-                    <g>
-                      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
-                    </g>
-                  </svg>
-                  <span className="blind">광고 닫기</span>
-                </button>
-              </div>
-            </div>
+            <AdSection />
             <div className="content_inner">
               <div className="section flow_section">
                 <ul className="video_list">
