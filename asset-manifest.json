@@ -1,22 +1,23 @@
 {
   "files": {
-    "main.css": "/youtube-react/static/css/main.ea762b5e.chunk.css",
-    "main.js": "/youtube-react/static/js/main.845b9daa.chunk.js",
-    "main.js.map": "/youtube-react/static/js/main.845b9daa.chunk.js.map",
-    "runtime-main.js": "/youtube-react/static/js/runtime-main.27a6b03b.js",
-    "runtime-main.js.map": "/youtube-react/static/js/runtime-main.27a6b03b.js.map",
-    "static/js/2.557fad9c.chunk.js": "/youtube-react/static/js/2.557fad9c.chunk.js",
-    "static/js/2.557fad9c.chunk.js.map": "/youtube-react/static/js/2.557fad9c.chunk.js.map",
-    "static/js/3.e735f4dd.chunk.js": "/youtube-react/static/js/3.e735f4dd.chunk.js",
-    "static/js/3.e735f4dd.chunk.js.map": "/youtube-react/static/js/3.e735f4dd.chunk.js.map",
+    "main.css": "/youtube-react/static/css/main.ca5c793b.chunk.css",
+    "main.js": "/youtube-react/static/js/main.45da44a1.chunk.js",
+    "main.js.map": "/youtube-react/static/js/main.45da44a1.chunk.js.map",
+    "runtime-main.js": "/youtube-react/static/js/runtime-main.fb03288a.js",
+    "runtime-main.js.map": "/youtube-react/static/js/runtime-main.fb03288a.js.map",
+    "static/js/2.07db1996.chunk.js": "/youtube-react/static/js/2.07db1996.chunk.js",
+    "static/js/2.07db1996.chunk.js.map": "/youtube-react/static/js/2.07db1996.chunk.js.map",
+    "static/js/3.82a21e93.chunk.js": "/youtube-react/static/js/3.82a21e93.chunk.js",
+    "static/js/3.82a21e93.chunk.js.map": "/youtube-react/static/js/3.82a21e93.chunk.js.map",
     "index.html": "/youtube-react/index.html",
-    "static/css/main.ea762b5e.chunk.css.map": "/youtube-react/static/css/main.ea762b5e.chunk.css.map",
-    "static/js/2.557fad9c.chunk.js.LICENSE.txt": "/youtube-react/static/js/2.557fad9c.chunk.js.LICENSE.txt"
+    "static/css/main.ca5c793b.chunk.css.map": "/youtube-react/static/css/main.ca5c793b.chunk.css.map",
+    "static/js/2.07db1996.chunk.js.LICENSE.txt": "/youtube-react/static/js/2.07db1996.chunk.js.LICENSE.txt",
+    "static/media/close.27221bf5.svg": "/youtube-react/static/media/close.27221bf5.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.27a6b03b.js",
-    "static/js/2.557fad9c.chunk.js",
-    "static/css/main.ea762b5e.chunk.css",
-    "static/js/main.845b9daa.chunk.js"
+    "static/js/runtime-main.fb03288a.js",
+    "static/js/2.07db1996.chunk.js",
+    "static/css/main.ca5c793b.chunk.css",
+    "static/js/main.45da44a1.chunk.js"
   ]
 }
