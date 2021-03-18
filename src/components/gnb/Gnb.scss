@@ -55,7 +55,7 @@
     display: block;
     fill: $grey-color;
   }
-  .icon_setting {
+  .icon_more {
     display: inline-block;
     fill: $grey-color;
     vertical-align: middle;
@@ -229,21 +229,22 @@
       background-color: #f8f8f8;
       vertical-align: middle;
 
+      .icon_search {
+        width: 20px;
+        height: 20px;
+        margin: 0 auto;
+        fill: #333;
+        opacity: 0.6;
+      }
       &:hover {
         background-color: #f0f0f0;
         border-color: #c6c6c6;
         box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 
-        .icon_submit_search {
+        .icon_search {
           opacity: 1;
         }
       }
-    }
-    .icon_submit_search {
-      width: 20px;
-      height: 20px;
-      fill: #333;
-      opacity: 0.6;
     }
   }
   .keyword_wrap {
@@ -352,7 +353,7 @@
       transform: translateY(-20px);
       padding: 8px;
     }
-    .icon_setting {
+    .icon_more {
       fill: #909090;
     }
     .content_wrap {
@@ -482,30 +483,5 @@
     height: 24px;
     vertical-align: top;
     fill: $grey-color;
-  }
-}
-.logo {
-  display: inline-block;
-  height: 24px;
-  vertical-align: middle;
-
-  .link {
-    display: inline-block;
-    height: 100%;
-    vertical-align: top;
-  }
-  .icon_youtube {
-    width: 80px;
-    height: 100%;
-  }
-  .unit_nation {
-    display: inline-block;
-    height: 100%;
-    margin-left: 2px;
-    font-size: 10px;
-    line-height: 14px;
-    font-weight: normal;
-    color: $grey-color;
-    vertical-align: top;
   }
 }

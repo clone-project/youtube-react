@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+@import "../../assets/stylesheets/common";
+
+.logo {
+  display: inline-block;
+  height: 24px;
+  vertical-align: middle;
+
+  .link {
+    display: inline-block;
+    height: 100%;
+    vertical-align: top;
+  }
+  .icon_youtube {
+    width: 80px;
+    height: 100%;
+  }
+  .unit_nation {
+    display: inline-block;
+    height: 100%;
+    margin-left: 2px;
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: normal;
+    color: $grey-color;
+    vertical-align: top;
+  }
+}
