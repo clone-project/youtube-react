@@ -2,13 +2,12 @@ import { ReactComponent as LogoYoutube } from "../../assets/icons/gnb/logo-youtu
 import { ReactComponent as LogoPremium } from "../../assets/icons/gnb/logo-premium.svg"
 import "./GnbLogo.scss";
 
-function GnbLogo({isPremium}) {
-  console.log(isPremium);
+function GnbLogo(props) {
   return (
     <h1 className="logo">
       <a href="/" className="link">
         <span className="blind">YouTube</span>
-        {isPremium ? (
+        {props.isPremium ? (
           <LogoPremium />
         ) : (
           <LogoYoutube />
