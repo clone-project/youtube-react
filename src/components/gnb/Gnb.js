@@ -1,6 +1,7 @@
 import GnbLogo from "./GnbLogo";
 import GnbSearch from "./GnbSearch";
 import GnbAccount from "./GnbAccount";
+import { ReactComponent as IconMenu } from "../../assets/icons/gnb/menu.svg"
 import "./Gnb.scss";
 import UserData from "../../mock/user";
 
@@ -11,11 +12,7 @@ function Gnb() {
           {/*[D] 클릭 시 .layer_lnb에 .open 클래스 추가 및 aria-expanded 값 true로 변경*/}
           <button type="button" id="gnb-button-lnb" className="button_lnb" aria-expanded="false" aria-haspopup="menu">
             <span className="blind">메뉴</span>
-            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style icon_menu">
-              <g>
-                <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
-              </g>
-            </svg>
+            <IconMenu />
           </button>
           <GnbLogo isPremium={UserData.user.premium} />
         </div>
