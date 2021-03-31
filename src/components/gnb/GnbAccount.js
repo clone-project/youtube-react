@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { ReactComponent as IconOption } from "../../assets/icons/gnb/option.svg"
 import { ReactComponent as IconLogin } from "../../assets/icons/gnb/account-login.svg"
 import { ReactComponent as IconArrow } from "../../assets/icons/gnb/arrow.svg"
