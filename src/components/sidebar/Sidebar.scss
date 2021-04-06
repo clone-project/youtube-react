@@ -3,30 +3,43 @@
 @import "../../assets/stylesheets/common";
 
 .layer_lnb {
-  display: none;
+  overflow: hidden;
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   z-index: 100;
-  background-color: rgba(0, 0, 0, 0.5);
+  width: 0;
+  transition: width 0.01s 0.21s, background-color 0.2s 0.01s;
 
   @include mq-min-1330 {
-    display: block;
     top: $header-height;
     right: auto;
-    background-color: transparent;
+    width: 100%;
   }
   &.open {
-    display: block;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: width 0.01s;
+
+    @include mq-min-1330 {
+      background-color: transparent;
+    }
+
+    .layer_content {
+      transform: translateX(0);
+    }
   }
   .layer_content {
+    overflow: hidden;
     display: flex;
     width: 240px;
     height: 100%;
     background-color: #f9f9f9;
     flex-direction: column;
+    transform: translateX(-240px);
+    transition: transform 0.2s 0.01s;
 
     @include mq-min-1330 {
       background-color: #fff;
