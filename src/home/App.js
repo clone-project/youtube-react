@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import Gnb from "../components/gnb/Gnb.js"
 import MiniSidebar from "../components/mini-sidebar/MiniSidebar.js"
 import Sidebar from "../components/sidebar/Sidebar.js"
@@ -5,12 +6,14 @@ import AdSection from "./ad-section/AdSection.js"
 import "./App.scss";
 
 function App() {
+  const [ isOpenMenu, setOpenMenu ] = useState(false);
+
   return (
     <div className="App">
-      <Gnb />
+      <Gnb isOpenMenu={ isOpenMenu } setOpenMenu={ setOpenMenu } />
       <div className="container">
         <MiniSidebar />
-        <Sidebar />
+        <Sidebar isOpen={ isOpenMenu } setOpen={ setOpenMenu } />
         <div id="content" className="content">
           <h2 className="blind">홈</h2>
           <AdSection />

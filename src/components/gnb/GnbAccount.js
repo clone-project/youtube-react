@@ -7,32 +7,36 @@ import UserData from "../../mock/user"
 
 function GnbAccount() {
   const [ isLogin, setLogin ] = useState(false);
+  const [ isOpen, setOpen ] = useState(false);
 
   function toggleLogin() {
     setLogin(!isLogin);
   }
+  function openDropdown() {
+    setOpen(!isOpen);
+  }
 
   return (
-    <div id="gnb-account" className={ "account_area " + ( isLogin? 'is_login' : '' ) }>
+    <div className={ "account_area " + ( isLogin? 'is_login' : '' ) }>
       {/*[D] login 상태일 경우 .account_area에 .is-login 클래스 추가*/}
       <span className="logout-item">
         {/*[D] 클릭 시 .dropdown_account에 .open 클래스 추가 및 aria-expanded 값 true로 변경*/}
-        <button type="button" id="gnb-button-setting" className="button_setting" aria-expanded="false">
+        <button type="button" className="button_setting" aria-expanded={`${isOpen}`} onClick={ openDropdown }>
           <span className="blind">설정</span>
           <IconOption />
         </button>
-        <button type="button" id="button-login" className="link_login" onClick={ toggleLogin }>
+        <button type="button" className="link_login" onClick={ toggleLogin }>
           <IconLogin />로그인
         </button>
       </span>
     {/*[D] 클릭 시 .dropdown_account에 .open 클래스 추가 및 aria-expanded 값 true로 변경*/}
-    <button type="button" id="gnb-button-account" className="button_account login-item" aria-expanded="false" onClick={ toggleLogin }>
-      <img id="user-profile24" src={ UserData.user.accounts[0].profile } className="image_profile" width="24" height="24" alt="프로필" />
+    <button type="button" className="button_account login-item" aria-expanded={`${isOpen}`} onClick={ openDropdown }>
+      <img src={ UserData.user.accounts[0].profile } className="image_profile" width="24" height="24" alt="프로필" />
     </button>
-    <div id="gnb-dropdown-account" className="dropdown_account">
+    <div className={"dropdown_account " + ( isOpen? 'open' : '' )}>
       <div className="profile_section login-item">
         <div className="image_area">
-          <img id="user-profile40" src={ UserData.user.accounts[0].profile } className="image_profile" width="40" height="40" alt="프로필" />
+          <img src={ UserData.user.accounts[0].profile } className="image_profile" width="40" height="40" alt="프로필" />
         </div>
         <div className="text_area">
           <span className="nickname">{ UserData.user.accounts[0].nickname }</span>
@@ -58,7 +62,7 @@ function GnbAccount() {
           <span className="text">계정 전환</span>
           <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="icon_arrow"><g mirror-in-rtl=""><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></g></svg>
         </button>
-        <button type="button" id="button-logout" className="link_item" onClick={ toggleLogin }>
+        <button type="button" className="link_item" onClick={ toggleLogin }>
           <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g mirror-in-rtl=""><path d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5c-1.11 0-2 .9-2 2v4h2V5h14v14H5v-4H3v4c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"></path></g></svg>
           <span className="text">로그아웃</span>
         </button>

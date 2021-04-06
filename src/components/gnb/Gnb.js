@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import GnbLogo from "./GnbLogo";
 import GnbSearch from "./GnbSearch";
 import GnbAccount from "./GnbAccount";
@@ -7,12 +8,20 @@ import "./Gnb.scss";
 import UserData from "../../mock/user";
 import DropdownData from "../../mock/gnbDropdown";
 
-function Gnb() {
+function Gnb(props) {
+  const [ isOpenDropdown, setOpenDropdown ] = useState(false);
+
+  function openMenu() {
+    props.setOpenMenu(!props.isOpenMenu);
+  }
+  function openDropdown() {
+    setOpenDropdown(!isOpenDropdown);
+  }
+
   return (
     <header className="gnb">
       <div className="left_section">
-        {/*[D] 클릭 시 .layer_lnb에 .open 클래스 추가 및 aria-expanded 값 true로 변경*/}
-        <button type="button" id="gnb-button-lnb" className="button_lnb" aria-expanded="false" aria-haspopup="menu">
+        <button type="button" className="button_lnb" aria-expanded={`${props.isOpenMenu}`} aria-haspopup="menu" onClick={ openMenu }>
           <span className="blind">메뉴</span>
           <IconMenu />
         </button>
@@ -22,7 +31,7 @@ function Gnb() {
         <GnbSearch />
         <div className="upload_area">
           {/*[D] 클릭 시 .dropdown_make에 .open 클래스 추가 및 aria-expanded 값 true로 변경*/}
-          <button type="button" id="gnb-button-make" className="button_make" aria-haspopup="menu" aria-expanded="false">
+          <button type="button" className="button_make" aria-haspopup="menu" aria-expanded="false">
             <span className="blind">만들기</span>
             <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style icon_upload">
             <g>
@@ -33,8 +42,7 @@ function Gnb() {
           <GnbDropdown data={ DropdownData.dropdowns[0] } />
         </div>
         <div className="app_area">
-          {/*[D] 클릭 시 .dropdown_app에 .open 클래스 추가 및 aria-expanded 값 true로 변경*/}
-          <button type="button" id="gnb-button-app" className="button_app" aria-haspopup="menu" aria-expanded="false">
+          <button type="button" className="button_app" aria-haspopup="menu" aria-expanded={`${isOpenDropdown}`} onClick={ openDropdown }>
             <span className="blind">YouTube 앱</span>
             <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style icon_app">
               <g>
@@ -42,11 +50,11 @@ function Gnb() {
               </g>
             </svg>
           </button>
-          <GnbDropdown data={ DropdownData.dropdowns[1] } />
+          <GnbDropdown data={ DropdownData.dropdowns[1] } isOpen={ isOpenDropdown } setOpen={ setOpenDropdown } />
         </div>
-        <div id="gnb-notification-area" className="notification_area">
+        <div className="notification_area">
           {/*[D] 클릭 시 .dropdown_notification에 .open 클래스 추가 및 aria-expanded 값 true로 변경*/}
-          <button type="button" id="gnb-button-notification" className="button_notification" aria-haspopup="menu" aria-expanded="false">
+          <button type="button" className="button_notification" aria-haspopup="menu" aria-expanded="false">
             <span className="blind">알림</span>
             <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style icon_notification">
               <g>

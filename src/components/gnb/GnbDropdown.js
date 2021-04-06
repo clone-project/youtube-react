@@ -1,3 +1,5 @@
+import React, { useState } from 'react';
+
 function GnbDropdown(props) {
   const listSection = props.data.section.map(prop => {
     const listItem = prop.item.map((prop2, idx) => {
@@ -18,7 +20,7 @@ function GnbDropdown(props) {
   });
 
   return (
-    <div className={ props.data.classname }>
+    <div className={ props.data.classname + ( props.isOpen? ' open' : '' )}>
       { listSection }
     </div>
   );
