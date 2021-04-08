@@ -16,7 +16,8 @@
   @include mq-min-1330 {
     top: $header-height;
     right: auto;
-    width: 100%;
+    width: 240px;
+    transition: none;
   }
   &.open {
     width: 100%;
@@ -43,6 +44,8 @@
 
     @include mq-min-1330 {
       background-color: #fff;
+      transform: translateX(0);
+      transition: none;
     }
   }
 }

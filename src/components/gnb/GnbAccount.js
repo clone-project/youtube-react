@@ -17,56 +17,62 @@ function GnbAccount() {
   }
 
   return (
-    <div className={ "account_area " + ( isLogin? 'is_login' : '' ) }>
-      {/*[D] login 상태일 경우 .account_area에 .is-login 클래스 추가*/}
-      <span className="logout-item">
-        {/*[D] 클릭 시 .dropdown_account에 .open 클래스 추가 및 aria-expanded 값 true로 변경*/}
-        <button type="button" className="button_setting" aria-expanded={`${isOpen}`} onClick={ openDropdown }>
-          <span className="blind">설정</span>
-          <IconOption />
+    <div className="account_area">
+      { !isLogin &&
+        <>
+          <button type="button" className="button_setting" aria-expanded={`${isOpen}`} onClick={ openDropdown }>
+            <span className="blind">설정</span>
+            <IconOption />
+          </button>
+          <button type="button" className="link_login" onClick={ toggleLogin }>
+            <IconLogin />로그인
+          </button>
+        </>
+      }
+      { isLogin &&
+        <button type="button" className="button_account" aria-expanded={`${isOpen}`} onClick={ openDropdown }>
+          <img src={ UserData.user.accounts[0].profile } className="image_profile" width="24" height="24" alt="프로필" />
         </button>
-        <button type="button" className="link_login" onClick={ toggleLogin }>
-          <IconLogin />로그인
-        </button>
-      </span>
-    {/*[D] 클릭 시 .dropdown_account에 .open 클래스 추가 및 aria-expanded 값 true로 변경*/}
-    <button type="button" className="button_account login-item" aria-expanded={`${isOpen}`} onClick={ openDropdown }>
-      <img src={ UserData.user.accounts[0].profile } className="image_profile" width="24" height="24" alt="프로필" />
-    </button>
+      }
     <div className={"dropdown_account " + ( isOpen? 'open' : '' )}>
-      <div className="profile_section login-item">
-        <div className="image_area">
-          <img src={ UserData.user.accounts[0].profile } className="image_profile" width="40" height="40" alt="프로필" />
-        </div>
-        <div className="text_area">
-          <span className="nickname">{ UserData.user.accounts[0].nickname }</span>
-          <span className="address">{ UserData.user.id }</span>
-          <a href="https://myaccount.google.com/u/0/?utm_source=YouTubeWeb&tab=rk&utm_medium=act&tab=rk&hl=ko" className="link_account">Google 계정 관리</a>
-        </div>
-      </div>
-      <div className="dropdown_section login-item">
-        <a href="#" className="link_item">
-          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M3 5v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.11 0-2 .9-2 2zm12 4c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3zm-9 8c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6v-1z"></path><path d="M0 0h24v24H0z" fill="none"></path></g></svg>
-          <span className="text">내 채널</span>
-        </a>
-        <a href="#" className="link_item">
-          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V20h-2.67v-1.93c-1.71-.36-3.16-1.46-3.27-3.4h1.96c.1 1.05.82 1.87 2.65 1.87 1.96 0 2.4-.98 2.4-1.59 0-.83-.44-1.61-2.67-2.14-2.48-.6-4.18-1.62-4.18-3.67 0-1.72 1.39-2.84 3.11-3.21V4h2.67v1.95c1.86.45 2.79 1.86 2.85 3.39H14.3c-.05-1.11-.64-1.87-2.22-1.87-1.5 0-2.4.68-2.4 1.64 0 .84.65 1.39 2.67 1.91s4.18 1.39 4.18 3.91c-.01 1.83-1.38 2.83-3.12 3.16z"></path><path fill="none" d="M0 0h24v24H0z"></path></g></svg>
-          <span className="text">구매 항목 및 멤버십</span>
-        </a>
-        <a href="#" className="link_item">
-          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM10 15V9l5 3-5 3z"></path></g></svg>
-          <span className="text">YouTube 스튜디오</span>
-        </a>
-        <button type="button" className="link_item">
-          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H8c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h12zm-3 5c0-1.66-1.34-3-3-3s-3 1.34-3 3 1.34 3 3 3 3-1.34 3-3zm-9 8v1h12v-1c0-2-4-3.1-6-3.1S8 13 8 15z"></path></g></svg>
-          <span className="text">계정 전환</span>
-          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="icon_arrow"><g mirror-in-rtl=""><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></g></svg>
-        </button>
-        <button type="button" className="link_item" onClick={ toggleLogin }>
-          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g mirror-in-rtl=""><path d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5c-1.11 0-2 .9-2 2v4h2V5h14v14H5v-4H3v4c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"></path></g></svg>
-          <span className="text">로그아웃</span>
-        </button>
-      </div>
+      {
+        isLogin &&
+        <>
+          <div className="profile_section">
+            <div className="image_area">
+              <img src={ UserData.user.accounts[0].profile } className="image_profile" width="40" height="40" alt="프로필" />
+            </div>
+            <div className="text_area">
+              <span className="nickname">{ UserData.user.accounts[0].nickname }</span>
+              <span className="address">{ UserData.user.id }</span>
+              <a href="https://myaccount.google.com/u/0/?utm_source=YouTubeWeb&tab=rk&utm_medium=act&tab=rk&hl=ko" className="link_account">Google 계정 관리</a>
+            </div>
+          </div>
+          <div className="dropdown_section">
+            <a href="#" className="link_item">
+              <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M3 5v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.11 0-2 .9-2 2zm12 4c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3zm-9 8c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6v-1z"></path><path d="M0 0h24v24H0z" fill="none"></path></g></svg>
+              <span className="text">내 채널</span>
+            </a>
+            <a href="#" className="link_item">
+              <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V20h-2.67v-1.93c-1.71-.36-3.16-1.46-3.27-3.4h1.96c.1 1.05.82 1.87 2.65 1.87 1.96 0 2.4-.98 2.4-1.59 0-.83-.44-1.61-2.67-2.14-2.48-.6-4.18-1.62-4.18-3.67 0-1.72 1.39-2.84 3.11-3.21V4h2.67v1.95c1.86.45 2.79 1.86 2.85 3.39H14.3c-.05-1.11-.64-1.87-2.22-1.87-1.5 0-2.4.68-2.4 1.64 0 .84.65 1.39 2.67 1.91s4.18 1.39 4.18 3.91c-.01 1.83-1.38 2.83-3.12 3.16z"></path><path fill="none" d="M0 0h24v24H0z"></path></g></svg>
+              <span className="text">구매 항목 및 멤버십</span>
+            </a>
+            <a href="#" className="link_item">
+              <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM10 15V9l5 3-5 3z"></path></g></svg>
+              <span className="text">YouTube 스튜디오</span>
+            </a>
+            <button type="button" className="link_item">
+              <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H8c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h12zm-3 5c0-1.66-1.34-3-3-3s-3 1.34-3 3 1.34 3 3 3 3-1.34 3-3zm-9 8v1h12v-1c0-2-4-3.1-6-3.1S8 13 8 15z"></path></g></svg>
+              <span className="text">계정 전환</span>
+            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="icon_arrow"><g mirror-in-rtl=""><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></g></svg>
+            </button>
+            <button type="button" className="link_item" onClick={ toggleLogin }>
+              <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g mirror-in-rtl=""><path d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5c-1.11 0-2 .9-2 2v4h2V5h14v14H5v-4H3v4c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"></path></g></svg>
+              <span className="text">로그아웃</span>
+            </button>
+          </div>
+        </>
+      }
       <div className="dropdown_section">
         <button type="button" className="link_item">
           <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M280.485281,201.514719 L284,198 L287.514719,201.514719 L292.485281,201.514719 L292.485281,206.485281 L296,210 L292.485281,213.514719 L292.485281,218.485281 L287.514719,218.485281 L284,222 L280.485281,218.485281 L275.514719,218.485281 L275.514719,213.514719 L272,210 L275.514719,206.485281 L275.514719,201.514719 L280.485281,201.514719 Z M283.726536,215.86375 C287.116026,215.86375 289.86375,213.251451 289.86375,210.029016 C289.86375,206.806581 287.116026,204.194281 283.726536,204.194281 C283.073662,204.194281 282.164855,204.396254 281.000116,204.800201 C282.532112,206.378393 283.29811,208.121331 283.29811,210.029016 C283.29811,211.9367 282.444938,213.635948 280.738594,215.126758 C282.007413,215.618086 283.003393,215.86375 283.726536,215.86375 Z" transform="translate(-272, -198)"></path></g></svg>

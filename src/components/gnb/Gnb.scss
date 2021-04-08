@@ -392,18 +392,6 @@
     display: inline-block;
     margin: 1px 0;
     vertical-align: middle;
-
-    .login-item {
-      display: none;
-    }
-    &.is_login {
-      .login-item {
-        display: block;
-      }
-      .logout-item {
-        display: none;
-      }
-    }
   }
   .link_login {
     display: inline-block;
