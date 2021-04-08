@@ -9,10 +9,11 @@ import UserData from "../../mock/user";
 import DropdownData from "../../mock/gnbDropdown";
 
 function Gnb(props) {
+  const { isOpenMenu, setOpenMenu } = props;
   const [ isOpenDropdown, setOpenDropdown ] = useState(false);
 
   function openMenu() {
-    props.setOpenMenu(!props.isOpenMenu);
+    setOpenMenu(!isOpenMenu);
   }
   function openDropdown() {
     setOpenDropdown(!isOpenDropdown);
@@ -21,7 +22,7 @@ function Gnb(props) {
   return (
     <header className="gnb">
       <div className="left_section">
-        <button type="button" className="button_lnb" aria-expanded={`${props.isOpenMenu}`} aria-haspopup="menu" onClick={ openMenu }>
+        <button type="button" className="button_lnb" aria-expanded={`${isOpenMenu}`} aria-haspopup="menu" onClick={ openMenu }>
           <span className="blind">메뉴</span>
           <IconMenu />
         </button>

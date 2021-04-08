@@ -3,17 +3,19 @@ import "./Sidebar.scss";
 import UserData from "../../mock/user";
 
 function Sidebar(props) {
+  const { isOpen, setOpen } = props;
+
   function closeMenu() {
-    props.setOpen(!props.isOpen);
+    setOpen(!isOpen);
   }
 
   return (
-    <div className={"layer_lnb " + ( props.isOpen? 'open' : '' )}>
+    <div className={"layer_lnb " + ( isOpen? 'open' : '' )}>
       {/*[D] layer 노출될 때 ltr 트랜지션*/}
       {/*[D] layer 여백 클릭 시 open 클래스 제거.*/}
       <div className="layer_content" role="menu">
         <div className="lnb_top_wrap">
-          <button type="button" className="button_lnb" aria-expanded={`${props.isOpen}`} aria-haspopup="menu" onClick={ closeMenu }>
+          <button type="button" className="button_lnb" aria-expanded={`${isOpen}`} aria-haspopup="menu" onClick={ closeMenu }>
             <span className="blind">메뉴</span>
             <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="icon_menu"><g><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></g></svg>
           </button>

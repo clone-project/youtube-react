@@ -1,26 +1,30 @@
 import React, { useState } from 'react';
 
 function GnbDropdown(props) {
-  const listSection = props.data.section.map(prop => {
+  const { data, isOpen } = props;
+
+  const listSection = data.section.map(prop => {
     const listItem = prop.item.map((prop2, idx) => {
+      const { link, icon, text } = prop2;
+
       return (
-        <a key={idx} href={prop2.link} className="link_item">
-          <svg viewBox="0 0 24 24" className="svg_style" dangerouslySetInnerHTML={{__html: prop2.icon}}></svg>
-          <span className="text">{prop2.text}</span>
+        <a key={ idx } href={ link } className="link_item">
+          <svg viewBox="0 0 24 24" className="svg_style" dangerouslySetInnerHTML={{ __html: icon }}></svg>
+          <span className="text">{ text }</span>
         </a>
       );
     });
 
     return (
       <>
-        { props.data.section.length < 2 && listItem }
-        { props.data.section.length >= 2 && <div className="dropdown_section">{ listItem }</div> }
+        { data.section.length < 2 && listItem }
+        { data.section.length >= 2 && <div className="dropdown_section">{ listItem }</div> }
       </>
     );
   });
 
   return (
-    <div className={ props.data.classname + ( props.isOpen? ' open' : '' )}>
+    <div className={ data.classname + ( isOpen? ' open' : '' )}>
       { listSection }
     </div>
   );
