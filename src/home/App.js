@@ -7,13 +7,14 @@ import "./App.scss";
 
 function App() {
   const [ isOpenMenu, setOpenMenu ] = useState(false);
+  const [ isLogin, setLogin ] = useState(false);
 
   return (
     <div className="App">
-      <Gnb isOpenMenu={ isOpenMenu } setOpenMenu={ setOpenMenu } />
+      <Gnb isOpenMenu={ isOpenMenu } setOpenMenu={ setOpenMenu } isLogin={ isLogin } setLogin={ setLogin } />
       <div className="container">
         <MiniSidebar />
-        <Sidebar isOpen={ isOpenMenu } setOpen={ setOpenMenu } />
+        <Sidebar isOpen={ isOpenMenu } setOpen={ setOpenMenu } isLogin={ isLogin } setLogin={ setLogin } />
         <div id="content" className="content">
           <h2 className="blind">홈</h2>
           <AdSection />

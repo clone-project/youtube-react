@@ -9,7 +9,7 @@ import UserData from "../../mock/user";
 import DropdownData from "../../mock/gnbDropdown";
 
 function Gnb(props) {
-  const { isOpenMenu, setOpenMenu } = props;
+  const { isLogin, setLogin, isOpenMenu, setOpenMenu } = props;
   const [ isOpenDropdown, setOpenDropdown ] = useState(false);
 
   function openMenu() {
@@ -88,7 +88,7 @@ function Gnb(props) {
             </div>
           </div>
         </div>
-        <GnbAccount />
+        <GnbAccount isLogin={ isLogin } setLogin={ setLogin } />
       </div>
     </header>
   )

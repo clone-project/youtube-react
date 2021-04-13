@@ -1,12 +1,17 @@
 import GnbLogo from "../gnb/GnbLogo";
 import "./Sidebar.scss";
 import UserData from "../../mock/user";
+import {ReactComponent as IconLogin} from "../../assets/icons/gnb/account-login.svg";
+import React from "react";
 
 function Sidebar(props) {
-  const { isOpen, setOpen } = props;
+  const { isOpen, setOpen, isLogin, setLogin } = props;
 
   function closeMenu() {
     setOpen(!isOpen);
+  }
+  function toggleLogin() {
+    setLogin(!isLogin);
   }
 
   return (
@@ -31,12 +36,24 @@ function Sidebar(props) {
                   <span className="text">홈</span>
                 </a>
               </li>
-              <li role="presentation" className="list_item">
-                <a href="/feed/trending" role="menuitem" className="link" aria-selected="false">
-                  <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M17.53 11.2c-.23-.3-.5-.56-.76-.82-.65-.6-1.4-1.03-2.03-1.66-1.46-1.46-1.78-3.87-.85-5.72-.9.23-1.75.75-2.45 1.32C8.9 6.4 7.9 10.07 9.1 13.22c.04.1.08.2.08.33 0 .22-.15.42-.35.5-.22.1-.46.04-.64-.12-.06-.05-.1-.1-.15-.17-1.1-1.43-1.28-3.48-.53-5.12C5.87 10 5 12.3 5.12 14.47c.04.5.1 1 .27 1.5.14.6.4 1.2.72 1.73 1.04 1.73 2.87 2.97 4.84 3.22 2.1.27 4.35-.12 5.96-1.6 1.8-1.66 2.45-4.3 1.5-6.6l-.13-.26c-.2-.45-.47-.87-.78-1.25zm-3.1 6.3c-.28.24-.73.5-1.08.6-1.1.38-2.2-.16-2.88-.82 1.2-.28 1.9-1.16 2.1-2.05.17-.8-.14-1.46-.27-2.23-.12-.74-.1-1.37.2-2.06.15.38.35.76.58 1.06.76 1 1.95 1.44 2.2 2.8.04.14.06.28.06.43.03.82-.32 1.72-.92 2.26z"></path></g></svg>
-                  <span className="text">인기</span>
-                </a>
-              </li>
+              {
+                isLogin ? (
+                  <li role="presentation" className="list_item">
+                    <a href="/feed/trending" role="menuitem" className="link" aria-selected="false">
+                      <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M17.53 11.2c-.23-.3-.5-.56-.76-.82-.65-.6-1.4-1.03-2.03-1.66-1.46-1.46-1.78-3.87-.85-5.72-.9.23-1.75.75-2.45 1.32C8.9 6.4 7.9 10.07 9.1 13.22c.04.1.08.2.08.33 0 .22-.15.42-.35.5-.22.1-.46.04-.64-.12-.06-.05-.1-.1-.15-.17-1.1-1.43-1.28-3.48-.53-5.12C5.87 10 5 12.3 5.12 14.47c.04.5.1 1 .27 1.5.14.6.4 1.2.72 1.73 1.04 1.73 2.87 2.97 4.84 3.22 2.1.27 4.35-.12 5.96-1.6 1.8-1.66 2.45-4.3 1.5-6.6l-.13-.26c-.2-.45-.47-.87-.78-1.25zm-3.1 6.3c-.28.24-.73.5-1.08.6-1.1.38-2.2-.16-2.88-.82 1.2-.28 1.9-1.16 2.1-2.05.17-.8-.14-1.46-.27-2.23-.12-.74-.1-1.37.2-2.06.15.38.35.76.58 1.06.76 1 1.95 1.44 2.2 2.8.04.14.06.28.06.43.03.82-.32 1.72-.92 2.26z"></path></g></svg>
+                      <span className="text">인기</span>
+                    </a>
+                  </li>
+                ) :
+                (
+                  <li role="presentation" className="list_item">
+                    <a href="/feed/explore" role="menuitem" className="link" aria-selected="false">
+                      <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M11.23 13.08c-.29-.21-.48-.51-.54-.86-.06-.35.02-.71.23-.99.21-.29.51-.48.86-.54.35-.06.7.02.99.23.29.21.48.51.54.86.06.35-.02.71-.23.99a1.327 1.327 0 01-1.08.56c-.28 0-.55-.08-.77-.25zM22 12c0 5.52-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2s10 4.48 10 10zm-3.97-6.03L9.8 9.8l-3.83 8.23 8.23-3.83 3.83-8.23z"></path></g></svg>
+                      <span className="text">탐색</span>
+                    </a>
+                  </li>
+                )
+              }
               <li role="presentation" className="list_item">
                 <a href="/feed/subscriptions" role="menuitem" className="link" aria-selected="false">
                   <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M18.7 8.7H5.3V7h13.4v1.7zm-1.7-5H7v1.6h10V3.7zm3.3 8.3v6.7c0 1-.7 1.6-1.6 1.6H5.3c-1 0-1.6-.7-1.6-1.6V12c0-1 .7-1.7 1.6-1.7h13.4c1 0 1.6.8 1.6 1.7zm-5 3.3l-5-2.7V18l5-2.7z"></path></g></svg>
@@ -60,88 +77,104 @@ function Sidebar(props) {
                   <span className="text">시청 기록</span>
                 </a>
               </li>
-              <li role="presentation" className="list_item">
-                <a href="#" role="menuitem" className="link" aria-selected="false">
-                  <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M18.4 5.6v12.8H5.6V5.6h12.8zm0-1.8H5.6a1.8 1.8 0 0 0-1.8 1.8v12.8a1.8 1.8 0 0 0 1.8 1.9h12.8a1.8 1.8 0 0 0 1.9-1.9V5.6a1.8 1.8 0 0 0-1.9-1.8z"></path><path d="M10.2 9v6.5l5-3.2-5-3.2z"></path></g></svg>
-                  <span className="text">내 동영상</span>
-                </a>
-              </li>
-              <li role="presentation" className="list_item">
-                <a href="#" role="menuitem" className="link" aria-selected="false">
-                  <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M18 3v2h-2V3H8v2H6V3H4v18h2v-2h2v2h8v-2h2v2h2V3h-2zM8 17H6v-2h2v2zm0-4H6v-2h2v2zm0-4H6V7h2v2zm10 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z"></path><path d="M0 0h24v24H0z" fill="none"></path></g></svg>
-                  <span className="text">내 영화</span>
-                </a>
-              </li>
-              <li role="presentation" className="list_item">
-                <a href="#" role="menuitem" className="link" aria-selected="false">
-                  <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M12 3.67c-4.58 0-8.33 3.75-8.33 8.33s3.75 8.33 8.33 8.33 8.33-3.75 8.33-8.33S16.58 3.67 12 3.67zm3.5 11.83l-4.33-2.67v-5h1.25v4.34l3.75 2.25-.67 1.08z"></path></g></svg>
-                  <span className="text">나중에 볼 동영상</span>
-                </a>
-              </li>
-              <li role="presentation" className="list_item">
-                {/*[D] 클릭 시 .on 클래스 추가 X. .hide 클래스 추가.*/}
-                <button type="button" role="menuitem" className="link" aria-selected="false">
-                  <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></g></svg>
-                 <span className="text">더보기</span>
-               </button>
-              </li>
-              {/*[D] '더보기' 버튼 클릭 시 .hide 클래스 제거*/}
-              <li role="presentation" className="list_item hide">
-                <a href="#" role="menuitem" className="link" aria-selected="false">
-                  <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M3.75 18.75h3v-9h-3v9zm16.5-8.25c0-.83-.68-1.5-1.5-1.5h-4.73l.7-3.43.03-.24c0-.3-.13-.6-.33-.8l-.8-.78L8.7 8.7c-.3.26-.45.64-.45 1.05v7.5c0 .82.67 1.5 1.5 1.5h6.75c.62 0 1.15-.38 1.38-.9l2.27-5.3c.06-.18.1-.36.1-.55v-1.5z"></path></g></svg>
-                  <span className="text">좋아요 표시한 동영상</span>
-                </a>
-              </li>
-              <li role="presentation" className="list_item hide">
-                <a href="#" role="menuitem" className="link" aria-selected="false">
-                  <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M3.67 8.67h14V11h-14V8.67zm0-4.67h14v2.33h-14V4zm0 9.33H13v2.34H3.67v-2.34zm11.66 0v7l5.84-3.5-5.84-3.5z"></path></g></svg>
-                  <span className="text">김송이 재생목록</span>
-                </a>
-              </li>
-              <li role="presentation" className="list_item hide">
-                {/*[D] 클릭 시 on 클래스 추가 X*/}
-                <button type="button" role="menuitem" className="link" aria-selected="false">
-                  <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path></g></svg>
-                  <span className="text">간략히 보기</span>
-                </button>
-              </li>
+              {
+                isLogin &&
+                  <>
+                    <li role="presentation" className="list_item">
+                      <a href="#" role="menuitem" className="link" aria-selected="false">
+                        <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M18.4 5.6v12.8H5.6V5.6h12.8zm0-1.8H5.6a1.8 1.8 0 0 0-1.8 1.8v12.8a1.8 1.8 0 0 0 1.8 1.9h12.8a1.8 1.8 0 0 0 1.9-1.9V5.6a1.8 1.8 0 0 0-1.9-1.8z"></path><path d="M10.2 9v6.5l5-3.2-5-3.2z"></path></g></svg>
+                        <span className="text">내 동영상</span>
+                      </a>
+                    </li>
+                    <li role="presentation" className="list_item">
+                      <a href="#" role="menuitem" className="link" aria-selected="false">
+                        <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M18 3v2h-2V3H8v2H6V3H4v18h2v-2h2v2h8v-2h2v2h2V3h-2zM8 17H6v-2h2v2zm0-4H6v-2h2v2zm0-4H6V7h2v2zm10 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z"></path><path d="M0 0h24v24H0z" fill="none"></path></g></svg>
+                        <span className="text">내 영화</span>
+                      </a>
+                    </li>
+                    <li role="presentation" className="list_item">
+                      <a href="#" role="menuitem" className="link" aria-selected="false">
+                        <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M12 3.67c-4.58 0-8.33 3.75-8.33 8.33s3.75 8.33 8.33 8.33 8.33-3.75 8.33-8.33S16.58 3.67 12 3.67zm3.5 11.83l-4.33-2.67v-5h1.25v4.34l3.75 2.25-.67 1.08z"></path></g></svg>
+                        <span className="text">나중에 볼 동영상</span>
+                      </a>
+                    </li>
+                    <li role="presentation" className="list_item">
+                      {/*[D] 클릭 시 .on 클래스 추가 X. .hide 클래스 추가.*/}
+                      <button type="button" role="menuitem" className="link" aria-selected="false">
+                        <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></g></svg>
+                       <span className="text">더보기</span>
+                     </button>
+                    </li>
+                    {/*[D] '더보기' 버튼 클릭 시 .hide 클래스 제거*/}
+                    <li role="presentation" className="list_item hide">
+                      <a href="#" role="menuitem" className="link" aria-selected="false">
+                        <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M3.75 18.75h3v-9h-3v9zm16.5-8.25c0-.83-.68-1.5-1.5-1.5h-4.73l.7-3.43.03-.24c0-.3-.13-.6-.33-.8l-.8-.78L8.7 8.7c-.3.26-.45.64-.45 1.05v7.5c0 .82.67 1.5 1.5 1.5h6.75c.62 0 1.15-.38 1.38-.9l2.27-5.3c.06-.18.1-.36.1-.55v-1.5z"></path></g></svg>
+                        <span className="text">좋아요 표시한 동영상</span>
+                      </a>
+                    </li>
+                    <li role="presentation" className="list_item hide">
+                      <a href="#" role="menuitem" className="link" aria-selected="false">
+                        <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M3.67 8.67h14V11h-14V8.67zm0-4.67h14v2.33h-14V4zm0 9.33H13v2.34H3.67v-2.34zm11.66 0v7l5.84-3.5-5.84-3.5z"></path></g></svg>
+                        <span className="text">김송이 재생목록</span>
+                      </a>
+                    </li>
+                    <li role="presentation" className="list_item hide">
+                      {/*[D] 클릭 시 on 클래스 추가 X*/}
+                      <button type="button" role="menuitem" className="link" aria-selected="false">
+                        <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path></g></svg>
+                        <span className="text">간략히 보기</span>
+                      </button>
+                    </li>
+                  </>
+                }
             </ul>
           </div>
-          <div className="menu_section sub_menu">
-            <span className="section_title">구독</span>
-            <ul className="subscribed_list">
-              {/*[D] 채널 7개까지 노출. 초과될 경우 '더보기' 버튼 노출.*/}
-              <li className="list_item">
-                <a href="#" role="menuitem" className="link" aria-selected="false">
-                  <img src="https://yt3.ggpht.com/ytc/AAUvwnh8x17T5B8QcY6BU5iKuG52rYQJtWDzgZNIWyL2xA=s88-c-k-c0x00ffffff-no-rj" className="image_channel" width="24" height="24" alt="" />
-                  <span className="text">자이언트 펭TV</span>
-                  {/*[D] 새 콘텐츠 업로드 시 DOM 추가*/}
-                  <span className="new_dot"><span className="blind">NEW</span></span>
-                </a>
-              </li>
-              <li className="list_item">
-                <a href="#" role="menuitem" className="link" aria-selected="false">
-                  <img src="https://yt3.ggpht.com/ytc/AAUvwnhTwUX9m2UYXnIcUjIw1NEHhUF8RdhYDbc82yTR=s88-c-k-c0x00ffffff-no-rj" className="image_channel" width="24" height="24" alt="" />
-                  <span className="text">박막례 할머니 Korea Grandma</span>
-                </a>
-              </li>
-              <li role="presentation" className="list_item">
-                {/*[D] 클릭 시 .on 클래스 추가 X. .hide 클래스 추가.*/}
-                <button type="button" role="menuitem" className="link" aria-selected="false">
-                  <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></g></svg>
-                  <span className="text">00개 더보기</span>
-               </button>
-              </li>
-              {/*[D] '더보기' 버튼 클릭 시 .hide 클래스 제거*/}
-              <li role="presentation" className="list_item hide">
-                {/*[D] 클릭 시 on 클래스 추가 X*/}
-                <button type="button" role="menuitem" className="link" aria-selected="false">
-                 <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path></g></svg>
-                 <span className="text">간략히 보기</span>
+          {
+            isLogin ? (
+              <div className="menu_section sub_menu">
+                <span className="section_title">구독</span>
+                <ul className="subscribed_list">
+                  {/*[D] 채널 7개까지 노출. 초과될 경우 '더보기' 버튼 노출.*/}
+                  <li className="list_item">
+                    <a href="#" role="menuitem" className="link" aria-selected="false">
+                      <img src="https://yt3.ggpht.com/ytc/AAUvwnh8x17T5B8QcY6BU5iKuG52rYQJtWDzgZNIWyL2xA=s88-c-k-c0x00ffffff-no-rj" className="image_channel" width="24" height="24" alt="" />
+                      <span className="text">자이언트 펭TV</span>
+                      {/*[D] 새 콘텐츠 업로드 시 DOM 추가*/}
+                      <span className="new_dot"><span className="blind">NEW</span></span>
+                    </a>
+                  </li>
+                  <li className="list_item">
+                    <a href="#" role="menuitem" className="link" aria-selected="false">
+                      <img src="https://yt3.ggpht.com/ytc/AAUvwnhTwUX9m2UYXnIcUjIw1NEHhUF8RdhYDbc82yTR=s88-c-k-c0x00ffffff-no-rj" className="image_channel" width="24" height="24" alt="" />
+                      <span className="text">박막례 할머니 Korea Grandma</span>
+                    </a>
+                  </li>
+                  <li role="presentation" className="list_item">
+                    {/*[D] 클릭 시 .on 클래스 추가 X. .hide 클래스 추가.*/}
+                    <button type="button" role="menuitem" className="link" aria-selected="false">
+                      <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></g></svg>
+                      <span className="text">00개 더보기</span>
+                    </button>
+                  </li>
+                  {/*[D] '더보기' 버튼 클릭 시 .hide 클래스 제거*/}
+                  <li role="presentation" className="list_item hide">
+                    {/*[D] 클릭 시 on 클래스 추가 X*/}
+                    <button type="button" role="menuitem" className="link" aria-selected="false">
+                      <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path></g></svg>
+                      <span className="text">간략히 보기</span>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            ) : (
+              <div className="menu_section logout_menu">
+                <p className="description">로그인하면 동영상에 좋아요를 표시하고 댓글을 달거나 구독할 수 있습니다.</p>
+                <button type="button" className="link_login" onClick={ toggleLogin }>
+                  <IconLogin />로그인
                 </button>
-              </li>
-            </ul>
-          </div>
+              </div>
+            )
+          }
           <div className="menu_section sub_menu">
             <span className="section_title">YOUTUBE 더보기</span>
             <ul role="menu">
@@ -151,30 +184,39 @@ function Sidebar(props) {
                   <span className="text">YouTube Premium</span>
                 </a>
               </li>
-              <li role="presentation" className="list_item">
-                <a href="#" role="menuitem" className="link" aria-selected="false">
-                  <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M18 3v2h-2V3H8v2H6V3H4v18h2v-2h2v2h8v-2h2v2h2V3h-2zM8 17H6v-2h2v2zm0-4H6v-2h2v2zm0-4H6V7h2v2zm10 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z"></path><path d="M0 0h24v24H0z" fill="none"></path></g></svg>
-                  <span className="text">영화</span>
-                </a>
-              </li>
-              <li role="presentation" className="list_item">
-                <a href="#" role="menuitem" className="link" aria-selected="false">
-                  <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g fill-rule="evenodd"><path d="M22,13V8l-5-3l-5,3l0,0L7,5L2,8v5l10,6L22,13z M9,11H7v2H6v-2H4v-1h2V8h1v2h2V11z M15,13 c-0.55,0-1-0.45-1-1s0.45-1,1-1s1,0.45,1,1S15.55,13,15,13z M18,11c-0.55,0-1-0.45-1-1s0.45-1,1-1s1,0.45,1,1S18.55,11,18,11z"></path></g></svg>
-                  <span className="text">게임</span>
-                </a>
-              </li>
+              {
+                isLogin &&
+                <li role="presentation" className="list_item">
+                  <a href="#" role="menuitem" className="link" aria-selected="false">
+                    <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M18 3v2h-2V3H8v2H6V3H4v18h2v-2h2v2h8v-2h2v2h2V3h-2zM8 17H6v-2h2v2zm0-4H6v-2h2v2zm0-4H6V7h2v2zm10 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z"></path><path d="M0 0h24v24H0z" fill="none"></path></g></svg>
+                    <span className="text">영화</span>
+                  </a>
+                </li>
+              }
+              {
+                isLogin &&
+                <li role="presentation" className="list_item">
+                  <a href="#" role="menuitem" className="link" aria-selected="false">
+                    <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g fill-rule="evenodd"><path d="M22,13V8l-5-3l-5,3l0,0L7,5L2,8v5l10,6L22,13z M9,11H7v2H6v-2H4v-1h2V8h1v2h2V11z M15,13 c-0.55,0-1-0.45-1-1s0.45-1,1-1s1,0.45,1,1S15.55,13,15,13z M18,11c-0.55,0-1-0.45-1-1s0.45-1,1-1s1,0.45,1,1S18.55,11,18,11z"></path></g></svg>
+                    <span className="text">게임</span>
+                  </a>
+                </li>
+              }
               <li role="presentation" className="list_item">
                 <a href="#" role="menuitem" className="link" aria-selected="false">
                   <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M16.94 6.91l-1.41 1.45c.9.94 1.46 2.22 1.46 3.64s-.56 2.71-1.46 3.64l1.41 1.45c1.27-1.31 2.05-3.11 2.05-5.09s-.78-3.79-2.05-5.09zM19.77 4l-1.41 1.45C19.98 7.13 21 9.44 21 12.01c0 2.57-1.01 4.88-2.64 6.54l1.4 1.45c2.01-2.04 3.24-4.87 3.24-7.99 0-3.13-1.23-5.96-3.23-8.01zM7.06 6.91c-1.27 1.3-2.05 3.1-2.05 5.09s.78 3.79 2.05 5.09l1.41-1.45c-.9-.94-1.46-2.22-1.46-3.64s.56-2.71 1.46-3.64L7.06 6.91zM5.64 5.45L4.24 4C2.23 6.04 1 8.87 1 11.99c0 3.13 1.23 5.96 3.23 8.01l1.41-1.45C4.02 16.87 3 14.56 3 11.99s1.01-4.88 2.64-6.54z"></path><circle cx="12" cy="12" r="3"></circle></g></svg>
                   <span className="text">실시간</span>
                 </a>
               </li>
-              <li role="presentation" className="list_item">
-                <a href="#" role="menuitem" className="link" aria-selected="false">
-                  <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M9 21c0 .5.4 1 1 1h4c.6 0 1-.5 1-1v-1H9v1zm3-19C8.1 2 5 5.1 5 9c0 2.4 1.2 4.5 3 5.7V17c0 .5.4 1 1 1h6c.6 0 1-.5 1-1v-2.3c1.8-1.3 3-3.4 3-5.7 0-3.9-3.1-7-7-7z"></path></g></svg>
-                  <span className="text">학습</span>
-                </a>
-              </li>
+              {
+                isLogin &&
+                <li role="presentation" className="list_item">
+                  <a href="#" role="menuitem" className="link" aria-selected="false">
+                    <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M9 21c0 .5.4 1 1 1h4c.6 0 1-.5 1-1v-1H9v1zm3-19C8.1 2 5 5.1 5 9c0 2.4 1.2 4.5 3 5.7V17c0 .5.4 1 1 1h6c.6 0 1-.5 1-1v-2.3c1.8-1.3 3-3.4 3-5.7 0-3.9-3.1-7-7-7z"></path></g></svg>
+                    <span className="text">학습</span>
+                  </a>
+                </li>
+              }
             </ul>
           </div>
           <div className="menu_section sub_menu">

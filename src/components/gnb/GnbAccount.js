@@ -5,8 +5,8 @@ import { ReactComponent as IconArrow } from "../../assets/icons/gnb/arrow.svg"
 import "./GnbAccount.module.scss";
 import UserData from "../../mock/user"
 
-function GnbAccount() {
-  const [ isLogin, setLogin ] = useState(false);
+function GnbAccount(props) {
+  const { isLogin, setLogin } = props;
   const [ isOpen, setOpen ] = useState(false);
 
   function toggleLogin() {
