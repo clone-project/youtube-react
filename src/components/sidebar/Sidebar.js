@@ -1,11 +1,18 @@
+import React, { useState } from 'react';
 import GnbLogo from "../gnb/GnbLogo";
 import "./Sidebar.scss";
 import UserData from "../../mock/user";
+import Channel from "../../mock/channels";
 import {ReactComponent as IconLogin} from "../../assets/icons/gnb/account-login.svg";
-import React from "react";
 
 function Sidebar(props) {
   const { isOpen, setOpen, isLogin, setLogin } = props;
+  const [ showMenus, setMenus ] = useState(false);
+  const [ showChannels, setChannels ] = useState(false);
+  const [ idx, setIdx ] = useState(3);
+  const subscribedItem = UserData.user.subscribed;
+  // const subscribedChannel = JSON.parse(JSON.stringify(Channel.channels)); //깊은 복사
+  const subscribedChannel = Channel.channels; // 얕은 복사
 
   function closeMenu() {
     setOpen(!isOpen);
@@ -13,10 +20,38 @@ function Sidebar(props) {
   function toggleLogin() {
     setLogin(!isLogin);
   }
+  function toggleMenuListItems() {
+    setMenus(!showMenus);
+  }
+  function showListItems() {
+    setChannels(!showChannels);
+    setIdx(subscribedItem.length);
+  }
+  function hideListItems() {
+    setChannels(!showChannels);
+    setIdx(3);
+  }
+
+  UserData.user.subscribed = subscribedChannel; //구독 미구현. 채널 정보 전부 복사
+
+  const subscribedListItem = UserData.user.subscribed.slice(0, idx).map(prop => {
+    const { id, name, profile, link, recentUploaded } = prop;
+    return (
+      <li key={ id } className="list_item">
+        <a href={ link } role="menuitem" className="link" aria-selected="false">
+          <img src={ profile } className="image_channel" width="24" height="24" alt="" />
+          <span className="text">{ name }</span>
+          {
+            recentUploaded &&
+            <span className="new_dot"><span className="blind">NEW</span></span>
+          }
+        </a>
+      </li>
+    )
+  })
 
   return (
     <div className={"layer_lnb " + ( isOpen? 'open' : '' )}>
-      {/*[D] layer 노출될 때 ltr 트랜지션*/}
       {/*[D] layer 여백 클릭 시 open 클래스 제거.*/}
       <div className="layer_content" role="menu">
         <div className="lnb_top_wrap">
@@ -98,33 +133,37 @@ function Sidebar(props) {
                         <span className="text">나중에 볼 동영상</span>
                       </a>
                     </li>
-                    <li role="presentation" className="list_item">
-                      {/*[D] 클릭 시 .on 클래스 추가 X. .hide 클래스 추가.*/}
-                      <button type="button" role="menuitem" className="link" aria-selected="false">
-                        <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></g></svg>
-                       <span className="text">더보기</span>
-                     </button>
-                    </li>
-                    {/*[D] '더보기' 버튼 클릭 시 .hide 클래스 제거*/}
-                    <li role="presentation" className="list_item hide">
-                      <a href="#" role="menuitem" className="link" aria-selected="false">
-                        <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M3.75 18.75h3v-9h-3v9zm16.5-8.25c0-.83-.68-1.5-1.5-1.5h-4.73l.7-3.43.03-.24c0-.3-.13-.6-.33-.8l-.8-.78L8.7 8.7c-.3.26-.45.64-.45 1.05v7.5c0 .82.67 1.5 1.5 1.5h6.75c.62 0 1.15-.38 1.38-.9l2.27-5.3c.06-.18.1-.36.1-.55v-1.5z"></path></g></svg>
-                        <span className="text">좋아요 표시한 동영상</span>
-                      </a>
-                    </li>
-                    <li role="presentation" className="list_item hide">
-                      <a href="#" role="menuitem" className="link" aria-selected="false">
-                        <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M3.67 8.67h14V11h-14V8.67zm0-4.67h14v2.33h-14V4zm0 9.33H13v2.34H3.67v-2.34zm11.66 0v7l5.84-3.5-5.84-3.5z"></path></g></svg>
-                        <span className="text">김송이 재생목록</span>
-                      </a>
-                    </li>
-                    <li role="presentation" className="list_item hide">
-                      {/*[D] 클릭 시 on 클래스 추가 X*/}
-                      <button type="button" role="menuitem" className="link" aria-selected="false">
-                        <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path></g></svg>
-                        <span className="text">간략히 보기</span>
-                      </button>
-                    </li>
+                    {
+                      showMenus ? (
+                        <>
+                          <li role="presentation" className="list_item">
+                            <a href="#" role="menuitem" className="link" aria-selected="false">
+                              <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M3.75 18.75h3v-9h-3v9zm16.5-8.25c0-.83-.68-1.5-1.5-1.5h-4.73l.7-3.43.03-.24c0-.3-.13-.6-.33-.8l-.8-.78L8.7 8.7c-.3.26-.45.64-.45 1.05v7.5c0 .82.67 1.5 1.5 1.5h6.75c.62 0 1.15-.38 1.38-.9l2.27-5.3c.06-.18.1-.36.1-.55v-1.5z"></path></g></svg>
+                              <span className="text">좋아요 표시한 동영상</span>
+                            </a>
+                          </li>
+                          <li role="presentation" className="list_item">
+                            <a href="#" role="menuitem" className="link" aria-selected="false">
+                              <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M3.67 8.67h14V11h-14V8.67zm0-4.67h14v2.33h-14V4zm0 9.33H13v2.34H3.67v-2.34zm11.66 0v7l5.84-3.5-5.84-3.5z"></path></g></svg>
+                              <span className="text">{ UserData.user.accounts[0].nickname } 재생목록</span>
+                            </a>
+                          </li>
+                          <li role="presentation" className="list_item">
+                            <button type="button" role="menuitem" className="link" onClick={ toggleMenuListItems }>
+                              <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path></g></svg>
+                              <span className="text">간략히 보기</span>
+                            </button>
+                          </li>
+                        </>
+                      ) : (
+                        <li role="presentation" className="list_item">
+                          <button type="button" role="menuitem" className="link" onClick={ toggleMenuListItems }>
+                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></g></svg>
+                            <span className="text">더보기</span>
+                          </button>
+                        </li>
+                      )
+                    }
                   </>
                 }
             </ul>
@@ -134,36 +173,25 @@ function Sidebar(props) {
               <div className="menu_section sub_menu">
                 <span className="section_title">구독</span>
                 <ul className="subscribed_list">
-                  {/*[D] 채널 7개까지 노출. 초과될 경우 '더보기' 버튼 노출.*/}
-                  <li className="list_item">
-                    <a href="#" role="menuitem" className="link" aria-selected="false">
-                      <img src="https://yt3.ggpht.com/ytc/AAUvwnh8x17T5B8QcY6BU5iKuG52rYQJtWDzgZNIWyL2xA=s88-c-k-c0x00ffffff-no-rj" className="image_channel" width="24" height="24" alt="" />
-                      <span className="text">자이언트 펭TV</span>
-                      {/*[D] 새 콘텐츠 업로드 시 DOM 추가*/}
-                      <span className="new_dot"><span className="blind">NEW</span></span>
-                    </a>
-                  </li>
-                  <li className="list_item">
-                    <a href="#" role="menuitem" className="link" aria-selected="false">
-                      <img src="https://yt3.ggpht.com/ytc/AAUvwnhTwUX9m2UYXnIcUjIw1NEHhUF8RdhYDbc82yTR=s88-c-k-c0x00ffffff-no-rj" className="image_channel" width="24" height="24" alt="" />
-                      <span className="text">박막례 할머니 Korea Grandma</span>
-                    </a>
-                  </li>
-                  <li role="presentation" className="list_item">
-                    {/*[D] 클릭 시 .on 클래스 추가 X. .hide 클래스 추가.*/}
-                    <button type="button" role="menuitem" className="link" aria-selected="false">
-                      <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></g></svg>
-                      <span className="text">00개 더보기</span>
-                    </button>
-                  </li>
-                  {/*[D] '더보기' 버튼 클릭 시 .hide 클래스 제거*/}
-                  <li role="presentation" className="list_item hide">
-                    {/*[D] 클릭 시 on 클래스 추가 X*/}
-                    <button type="button" role="menuitem" className="link" aria-selected="false">
-                      <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path></g></svg>
-                      <span className="text">간략히 보기</span>
-                    </button>
-                  </li>
+                  {/*[D] 채널 3개까지 노출. 초과될 경우 '더보기' 버튼 노출.*/}
+                  { subscribedListItem }
+                  {
+                    showChannels ? (
+                      <li role="presentation" className="list_item">
+                        <button type="button" role="menuitem" className="link" onClick={ hideListItems }>
+                          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path></g></svg>
+                          <span className="text">간략히 보기</span>
+                        </button>
+                      </li>
+                    ) : (
+                      <li role="presentation" className="list_item">
+                        <button type="button" role="menuitem" className="link" onClick={ showListItems }>
+                          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></g></svg>
+                          <span className="text">{ subscribedItem.length - 3 }개 더보기</span>
+                        </button>
+                      </li>
+                    )
+                  }
                 </ul>
               </div>
             ) : (

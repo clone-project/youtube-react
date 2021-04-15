@@ -1,0 +1,60 @@
+{
+  "channels": [
+    {
+      "id": 1,
+      "name": "자이언트 펭TV",
+      "profile": "https://yt3.ggpht.com/ytc/AAUvwnh8x17T5B8QcY6BU5iKuG52rYQJtWDzgZNIWyL2xA=s88-c-k-c0x00ffffff-no-rj",
+      "link": "https://www.youtube.com/channel/UCtckgmUcpzqGnzcs7xEqMzQ",
+      "authorized": false,
+      "recentUploaded": true
+    },
+    {
+      "id": 2,
+      "name": "박막례 할머니 Korea Grandma",
+      "profile": "https://yt3.ggpht.com/ytc/AAUvwnhTwUX9m2UYXnIcUjIw1NEHhUF8RdhYDbc82yTR=s88-c-k-c0x00ffffff-no-rj",
+      "link": "https://www.youtube.com/channel/UCN8CPzwkYiDVLZlgD4JQgJQ",
+      "authorized": false,
+      "recentUploaded": false
+    },
+    {
+      "id": 3,
+      "name": "일주어터",
+      "profile": "https://yt3.ggpht.com/ytc/AAUvwngWj4pSJnNz4Jd-YciCS_inDk0wORGGsMLYr13M=s68-c-k-c0x00ffffff-no-rj",
+      "link": "https://www.youtube.com/channel/UCYnfy2hyzqnVXv_UlLBiV-A",
+      "authorized": true,
+      "recentUploaded": false
+    },
+    {
+      "id": 4,
+      "name": "엠뚜루마뚜루 : MBC 공식 종합 채널",
+      "profile": "https://yt3.ggpht.com/ytc/AAUvwnioCFFoz_U0Kl_6T0ZJq358_L_KAWJUyJ4Xpho-=s88-c-k-c0x00ffffff-no-rj",
+      "link": "https://www.youtube.com/channel/UCiwQRG2sCcfjKkgxMEdJGPg",
+      "authorized": false,
+      "recentUploaded": false
+    },
+    {
+      "id": 5,
+      "name": "주식전쟁",
+      "profile": "https://yt3.ggpht.com/ytc/AAUvwnjb-valVfM-9wqEcAisx0qZM0QXoW13NzG23cT8=s88-c-k-c0x00ffffff-no-rj",
+      "link": "https://www.youtube.com/channel/UC5mn3VEg_9GY52G6eumKJRg",
+      "authorized": true,
+      "recentUploaded": false
+    },
+    {
+      "id": 6,
+      "name": "호이차",
+      "profile": "https://yt3.ggpht.com/ytc/AAUvwngEzml_sFPJQZbsiljHDBxrNQ1FZpmwzmr52AFulA=s88-c-k-c0x00ffffff-no-rj",
+      "link": "https://www.youtube.com/channel/UCuKqmt-J9MqR8OkXBve64fg",
+      "authorized": false,
+      "recentUploaded": true
+    },
+    {
+      "id": 7,
+      "name": "14F 일사에프",
+      "profile": "https://yt3.ggpht.com/ytc/AAUvwngquFz-FyFsWaHmp7cqXqBBH5ZZHe69k1iK2qD-=s88-c-k-c0x00ffffff-no-rj",
+      "link": "https://www.youtube.com/channel/UCLKuglhGlMmDteQKoniENIQ",
+      "authorized": false,
+      "recentUploaded": false
+    }
+  ]
+}
