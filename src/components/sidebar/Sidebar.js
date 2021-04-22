@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import GnbLogo from "../gnb/GnbLogo";
 import "./Sidebar.scss";
 import UserData from "../../mock/user";
@@ -10,6 +10,7 @@ function Sidebar(props) {
   const [ showMenus, setMenus ] = useState(false);
   const [ showChannels, setChannels ] = useState(false);
   const [ idx, setIdx ] = useState(3);
+  const modalElement = useRef();
   const subscribedItem = UserData.user.subscribed;
   // const subscribedChannel = JSON.parse(JSON.stringify(Channel.channels)); //깊은 복사
   const subscribedChannel = Channel.channels; // 얕은 복사
@@ -17,6 +18,20 @@ function Sidebar(props) {
   function closeMenu() {
     setOpen(!isOpen);
   }
+  const handleClickOutside = ({target}) => {
+    console.log(target);
+    console.log(isOpen);
+    console.log(modalElement.current.contains(target));
+    if (isOpen && !modalElement.current.contains(target)) {
+      setOpen(false);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("click", handleClickOutside);
+    return () => {
+      window.removeEventListener("click", handleClickOutside);
+    }
+  }, []);
   function toggleLogin() {
     setLogin(!isLogin);
   }
@@ -53,7 +68,7 @@ function Sidebar(props) {
   return (
     <div className={"layer_lnb " + ( isOpen? 'open' : '' )}>
       {/*[D] layer 여백 클릭 시 open 클래스 제거.*/}
-      <div className="layer_content" role="menu">
+      <div className="layer_content" ref={ modalElement } role="menu">
         <div className="lnb_top_wrap">
           <button type="button" className="button_lnb" aria-expanded={`${isOpen}`} aria-haspopup="menu" onClick={ closeMenu }>
             <span className="blind">메뉴</span>
