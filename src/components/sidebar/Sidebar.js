@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useCallback, useEffect } from 'react';
 import GnbLogo from "../gnb/GnbLogo";
 import "./Sidebar.scss";
 import UserData from "../../mock/user";
@@ -6,17 +6,29 @@ import Channel from "../../mock/channels";
 import {ReactComponent as IconLogin} from "../../assets/icons/gnb/account-login.svg";
 
 function Sidebar(props) {
-  const { isOpen, setOpen, isLogin, setLogin } = props;
+  const { isOpenMenu, setOpenMenu, isLogin, setLogin } = props;
   const [ showMenus, setMenus ] = useState(false);
   const [ showChannels, setChannels ] = useState(false);
   const [ idx, setIdx ] = useState(3);
+  const menuElement = useRef();
   const subscribedItem = UserData.user.subscribed;
   // const subscribedChannel = JSON.parse(JSON.stringify(Channel.channels)); //깊은 복사
   const subscribedChannel = Channel.channels; // 얕은 복사
 
   function closeMenu() {
-    setOpen(!isOpen);
+    setOpenMenu(!isOpenMenu);
   }
+  const handleClickOutside = useCallback(({target}) => {
+    if (isOpenMenu && !menuElement.current.contains(target)) {
+      setOpenMenu(false);
+    }
+  }, [isOpenMenu, setOpenMenu]);
+  useEffect(() => {
+    window.addEventListener("click", handleClickOutside);
+    return () => {
+      window.removeEventListener("click", handleClickOutside);
+    }
+  }, [handleClickOutside]);
   function toggleLogin() {
     setLogin(!isLogin);
   }
@@ -51,11 +63,11 @@ function Sidebar(props) {
   })
 
   return (
-    <div className={"layer_lnb " + ( isOpen? 'open' : '' )}>
+    <div className={"layer_lnb " + ( isOpenMenu? 'open' : '' )}>
       {/*[D] layer 여백 클릭 시 open 클래스 제거.*/}
-      <div className="layer_content" role="menu">
+      <div className="layer_content" ref={ menuElement } role="menu">
         <div className="lnb_top_wrap">
-          <button type="button" className="button_lnb" aria-expanded={`${isOpen}`} aria-haspopup="menu" onClick={ closeMenu }>
+          <button type="button" className="button_lnb" aria-expanded={`${isOpenMenu}`} aria-haspopup="menu" onClick={ closeMenu }>
             <span className="blind">메뉴</span>
             <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="icon_menu"><g><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></g></svg>
           </button>
