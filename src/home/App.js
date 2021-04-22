@@ -14,7 +14,7 @@ function App() {
       <Gnb isOpenMenu={ isOpenMenu } setOpenMenu={ setOpenMenu } isLogin={ isLogin } setLogin={ setLogin } />
       <div className="container">
         <MiniSidebar />
-        <Sidebar isOpen={ isOpenMenu } setOpen={ setOpenMenu } isLogin={ isLogin } setLogin={ setLogin } />
+        <Sidebar isOpenMenu={ isOpenMenu } setOpenMenu={ setOpenMenu } isLogin={ isLogin } setLogin={ setLogin } />
         <div id="content" className="content">
           <h2 className="blind">홈</h2>
           <AdSection />
