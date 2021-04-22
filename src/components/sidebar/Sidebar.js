@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useCallback, useEffect } from 'react';
 import GnbLogo from "../gnb/GnbLogo";
 import "./Sidebar.scss";
 import UserData from "../../mock/user";
@@ -18,20 +18,17 @@ function Sidebar(props) {
   function closeMenu() {
     setOpenMenu(!isOpenMenu);
   }
-  const handleClickOutside = ({target}) => {
-    console.log(target);
-    console.log(isOpenMenu);
-    console.log(menuElement.current.contains(target));
+  const handleClickOutside = useCallback(({target}) => {
     if (isOpenMenu && !menuElement.current.contains(target)) {
       setOpenMenu(false);
     }
-  };
+  }, [isOpenMenu, setOpenMenu]);
   useEffect(() => {
     window.addEventListener("click", handleClickOutside);
     return () => {
       window.removeEventListener("click", handleClickOutside);
     }
-  }, []);
+  }, [handleClickOutside]);
   function toggleLogin() {
     setLogin(!isLogin);
   }

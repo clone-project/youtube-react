@@ -12,7 +12,8 @@ function Gnb(props) {
   const { isLogin, setLogin, isOpenMenu, setOpenMenu } = props;
   const [ isOpenDropdown, setOpenDropdown ] = useState(false);
 
-  function openMenu() {
+  function openMenu(event) {
+    event.stopPropagation();
     setOpenMenu(!isOpenMenu);
   }
   function openDropdown() {
