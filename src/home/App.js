@@ -3,6 +3,14 @@ import Gnb from "../components/gnb/Gnb.js"
 import MiniSidebar from "../components/mini-sidebar/MiniSidebar.js"
 import Sidebar from "../components/sidebar/Sidebar.js"
 import AdSection from "./ad-section/AdSection.js"
+import { ReactComponent as IconAuthorized } from "../assets/icons/home/authorized.svg"
+import { ReactComponent as IconOption } from "../assets/icons/home/option.svg"
+import { ReactComponent as IconAdd } from "../assets/icons/home/add-list.svg"
+import { ReactComponent as IconLater } from "../assets/icons/home/watch-later.svg"
+import { ReactComponent as IconSave } from "../assets/icons/home/save-playlist.svg"
+import { ReactComponent as IconUninterested } from "../assets/icons/home/uninterested.svg"
+import { ReactComponent as IconNotRecommended } from "../assets/icons/home/not-recommended.svg"
+import { ReactComponent as IconReport } from "../assets/icons/home/report.svg"
 import "./App.scss";
 
 function App() {
@@ -35,15 +43,15 @@ function App() {
                     </a>
                     <div className="button_wrap">
                       <button type="button" className="button_add">
-                    <span className="icon">
-                      <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M12 3.67c-4.58 0-8.33 3.75-8.33 8.33s3.75 8.33 8.33 8.33 8.33-3.75 8.33-8.33S16.58 3.67 12 3.67zm3.5 11.83l-4.33-2.67v-5h1.25v4.34l3.75 2.25-.67 1.08z"></path></g></svg>
-                    </span>
+                        <span className="icon">
+                          <IconLater />
+                        </span>
                         <span className="text">나중에 볼 동영상</span>
                       </button>
                       <button type="button" className="button_add">
-                    <span className="icon">
-                      <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M9,10 L18,10 L18,12 L9,12 L9,10 Z M6,6 L18,6 L18,8 L6,8 L6,6 Z M12,14 L18,14 L18,16 L12,16 L12,14 Z M6,12 L6,18 L10,15 L6,12 Z"></path></g></svg>
-                    </span>
+                        <span className="icon">
+                          <IconAdd />
+                        </span>
                         <span className="text">목록에 추가</span>
                       </button>
                     </div>
@@ -60,9 +68,9 @@ function App() {
                         <span id="name-channel" className="channel">JTBC Entertainment</span>
                         {/*[D] 인증된 채널에만 .icon_authroized 추가*/}
                         <span id="authorized-channel" className="icon_authorized">
-                      <span className="blind">인증됨</span>
-                      <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path fill-rule="evenodd" clip-rule="evenodd" d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10 S17.52,2,12,2z M9.92,17.93l-4.95-4.95l2.05-2.05l2.9,2.9l7.35-7.35l2.05,2.05L9.92,17.93z"></path></g></svg>
-                    </span>
+                          <span className="blind">인증됨</span>
+                          <IconAuthorized />
+                        </span>
                       </a>
                       <a href="#" className="information_wrap">
                         {/* 스트리밍 방송 */}
@@ -78,63 +86,34 @@ function App() {
                       {/*[D] 버튼 클릭시 .dropdown_option에 .open 추가*/}
                       <button type="button" className="button_option">
                         <span className="blind">작업 메뉴</span>
-                        <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="icon_option">
-                          <g>
-                            <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
-                          </g>
-                        </svg>
+                        <IconOption />
                       </button>
                       <div className="dropdown_option">
                         <div className="dropdown_section">
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M9,10 L18,10 L18,12 L9,12 L9,10 Z M6,6 L18,6 L18,8 L6,8 L6,6 Z M12,14 L18,14 L18,16 L12,16 L12,14 Z M6,12 L6,18 L10,15 L6,12 Z"></path>
-                              </g>
-                            </svg>
+                            <IconAdd />
                             <span className="text">목록에 추가</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M12 3.67c-4.58 0-8.33 3.75-8.33 8.33s3.75 8.33 8.33 8.33 8.33-3.75 8.33-8.33S16.58 3.67 12 3.67zm3.5 11.83l-4.33-2.67v-5h1.25v4.34l3.75 2.25-.67 1.08z"></path>
-                              </g>
-                            </svg>
+                            <IconLater />
                             <span className="text">나중에 볼 동영상에 저장</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M14 10H2v2h12v-2zm0-4H2v2h12V6zm4 8v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM2 16h8v-2H2v2z"></path>
-                              </g>
-                            </svg>
+                            <IconSave />
                             <span className="text">재생목록에 저장</span>
                           </button>
                         </div>
                         <div className="dropdown_section">
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g className="style-scope yt-icon">
-                                <path d="M0 0h24v24H0z" fill="none"></path>
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8 0-1.85.63-3.55 1.69-4.9L16.9 18.31C15.55 19.37 13.85 20 12 20zm6.31-3.1L7.1 5.69C8.45 4.63 10.15 4 12 4c4.42 0 8 3.58 8 8 0 1.85-.63 3.55-1.69 4.9z"></path>
-                              </g>
-                            </svg>
+                            <IconUninterested />
                             <span className="text">관심 없음</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M7 11v2h10v-2H7zm5-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
-                              </g>
-                            </svg>
+                            <IconNotRecommended />
                             <span className="text">채널 추천 안함</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"></path>
-                              </g>
-                            </svg>
+                            <IconReport />
                             <span className="text">신고</span>
                           </button>
                         </div>
@@ -151,15 +130,11 @@ function App() {
                     </a>
                     <div className="button_wrap">
                       <button type="button" className="button_add">
-                        <span className="icon">
-                          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M12 3.67c-4.58 0-8.33 3.75-8.33 8.33s3.75 8.33 8.33 8.33 8.33-3.75 8.33-8.33S16.58 3.67 12 3.67zm3.5 11.83l-4.33-2.67v-5h1.25v4.34l3.75 2.25-.67 1.08z"></path></g></svg>
-                        </span>
+                        <IconLater/>
                         <span className="text">나중에 볼 동영상</span>
                       </button>
                       <button type="button" className="button_add">
-                        <span className="icon">
-                          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M9,10 L18,10 L18,12 L9,12 L9,10 Z M6,6 L18,6 L18,8 L6,8 L6,6 Z M12,14 L18,14 L18,16 L12,16 L12,14 Z M6,12 L6,18 L10,15 L6,12 Z"></path></g></svg>
-                        </span>
+                        <IconAdd/>
                         <span className="text">목록에 추가</span>
                       </button>
                     </div>
@@ -181,63 +156,34 @@ function App() {
                     <div className="option_wrap">
                       <button type="button" className="button_option">
                         <span className="blind">작업 메뉴</span>
-                        <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="icon_option">
-                          <g>
-                            <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
-                          </g>
-                        </svg>
+                        <IconOption/>
                       </button>
                       <div className="dropdown_option">
                         <div className="dropdown_section">
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M9,10 L18,10 L18,12 L9,12 L9,10 Z M6,6 L18,6 L18,8 L6,8 L6,6 Z M12,14 L18,14 L18,16 L12,16 L12,14 Z M6,12 L6,18 L10,15 L6,12 Z"></path>
-                              </g>
-                            </svg>
+                            <IconAdd/>
                             <span className="text">목록에 추가</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M12 3.67c-4.58 0-8.33 3.75-8.33 8.33s3.75 8.33 8.33 8.33 8.33-3.75 8.33-8.33S16.58 3.67 12 3.67zm3.5 11.83l-4.33-2.67v-5h1.25v4.34l3.75 2.25-.67 1.08z"></path>
-                              </g>
-                            </svg>
+                            <IconLater/>
                             <span className="text">나중에 볼 동영상에 저장</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M14 10H2v2h12v-2zm0-4H2v2h12V6zm4 8v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM2 16h8v-2H2v2z"></path>
-                              </g>
-                            </svg>
+                            <IconSave/>
                             <span className="text">재생목록에 저장</span>
                           </button>
                         </div>
                         <div className="dropdown_section">
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g className="style-scope yt-icon">
-                                <path d="M0 0h24v24H0z" fill="none"></path>
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8 0-1.85.63-3.55 1.69-4.9L16.9 18.31C15.55 19.37 13.85 20 12 20zm6.31-3.1L7.1 5.69C8.45 4.63 10.15 4 12 4c4.42 0 8 3.58 8 8 0 1.85-.63 3.55-1.69 4.9z"></path>
-                              </g>
-                            </svg>
+                            <IconUninterested/>
                             <span className="text">관심 없음</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M7 11v2h10v-2H7zm5-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
-                              </g>
-                            </svg>
+                            <IconNotRecommended/>
                             <span className="text">채널 추천 안함</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"></path>
-                              </g>
-                            </svg>
+                            <IconReport/>
                             <span className="text">신고</span>
                           </button>
                         </div>
@@ -257,14 +203,12 @@ function App() {
                     </a>
                     <div className="button_wrap">
                       <button type="button" className="button_add">
-                        <span className="icon">
-                          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M12 3.67c-4.58 0-8.33 3.75-8.33 8.33s3.75 8.33 8.33 8.33 8.33-3.75 8.33-8.33S16.58 3.67 12 3.67zm3.5 11.83l-4.33-2.67v-5h1.25v4.34l3.75 2.25-.67 1.08z"></path></g></svg>
-                        </span>
+                        <IconLater/>
                         <span className="text">나중에 볼 동영상</span>
                       </button>
                       <button type="button" className="button_add">
                         <span className="icon">
-                          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M9,10 L18,10 L18,12 L9,12 L9,10 Z M6,6 L18,6 L18,8 L6,8 L6,6 Z M12,14 L18,14 L18,16 L12,16 L12,14 Z M6,12 L6,18 L10,15 L6,12 Z"></path></g></svg>
+                          <IconAdd />
                         </span>
                         <span className="text">목록에 추가</span>
                       </button>
@@ -297,19 +241,11 @@ function App() {
                       <div className="dropdown_option">
                         <div className="dropdown_section">
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M9,10 L18,10 L18,12 L9,12 L9,10 Z M6,6 L18,6 L18,8 L6,8 L6,6 Z M12,14 L18,14 L18,16 L12,16 L12,14 Z M6,12 L6,18 L10,15 L6,12 Z"></path>
-                              </g>
-                            </svg>
+                            <IconAdd />
                             <span className="text">목록에 추가</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M12 3.67c-4.58 0-8.33 3.75-8.33 8.33s3.75 8.33 8.33 8.33 8.33-3.75 8.33-8.33S16.58 3.67 12 3.67zm3.5 11.83l-4.33-2.67v-5h1.25v4.34l3.75 2.25-.67 1.08z"></path>
-                              </g>
-                            </svg>
+                            <IconLater/>
                             <span className="text">나중에 볼 동영상에 저장</span>
                           </button>
                           <button type="button" className="item">
@@ -323,28 +259,15 @@ function App() {
                         </div>
                         <div className="dropdown_section">
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g className="style-scope yt-icon">
-                                <path d="M0 0h24v24H0z" fill="none"></path>
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8 0-1.85.63-3.55 1.69-4.9L16.9 18.31C15.55 19.37 13.85 20 12 20zm6.31-3.1L7.1 5.69C8.45 4.63 10.15 4 12 4c4.42 0 8 3.58 8 8 0 1.85-.63 3.55-1.69 4.9z"></path>
-                              </g>
-                            </svg>
+                            <IconUninterested />
                             <span className="text">관심 없음</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M7 11v2h10v-2H7zm5-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
-                              </g>
-                            </svg>
+                            <IconNotRecommended />
                             <span className="text">채널 추천 안함</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"></path>
-                              </g>
-                            </svg>
+                            <IconReport />
                             <span className="text">신고</span>
                           </button>
                         </div>
@@ -396,12 +319,7 @@ function App() {
                       <div className="dropdown_option">
                         <div className="dropdown_section">
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g className="style-scope yt-icon">
-                                <path d="M0 0h24v24H0z" fill="none"></path>
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8 0-1.85.63-3.55 1.69-4.9L16.9 18.31C15.55 19.37 13.85 20 12 20zm6.31-3.1L7.1 5.69C8.45 4.63 10.15 4 12 4c4.42 0 8 3.58 8 8 0 1.85-.63 3.55-1.69 4.9z"></path>
-                              </g>
-                            </svg>
+                            <IconUninterested />
                             <span className="text">관심 없음</span>
                           </button>
                         </div>
@@ -482,11 +400,7 @@ function App() {
                         {/*[D] .button_option 클릭 시 .dropdown_option에 .open 클래스 추가*/}
                         <div className="dropdown_option">
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"></path>
-                              </g>
-                            </svg>
+                            <IconReport />
                             <span className="text">신고</span>
                           </button>
                           <button type="button" className="item">
@@ -499,11 +413,7 @@ function App() {
                             <span className="text">관심없음</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M7 11v2h10v-2H7zm5-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
-                              </g>
-                            </svg>
+                            <IconNotRecommended />
                             <span className="text">채널의 게시물 추천 안함</span>
                           </button>
                         </div>
@@ -570,11 +480,7 @@ function App() {
                         </button>
                         <div className="dropdown_option">
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"></path>
-                              </g>
-                            </svg>
+                            <IconReport />
                             <span className="text">신고</span>
                           </button>
                           <button type="button" className="item">
@@ -587,11 +493,7 @@ function App() {
                             <span className="text">관심없음</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M7 11v2h10v-2H7zm5-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
-                              </g>
-                            </svg>
+                            <IconNotRecommended />
                             <span className="text">채널의 게시물 추천 안함</span>
                           </button>
                         </div>
@@ -661,11 +563,7 @@ function App() {
                         </button>
                         <div className="dropdown_option">
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"></path>
-                              </g>
-                            </svg>
+                            <IconReport />
                             <span className="text">신고</span>
                           </button>
                           <button type="button" className="item">
@@ -678,11 +576,7 @@ function App() {
                             <span className="text">관심없음</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M7 11v2h10v-2H7zm5-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
-                              </g>
-                            </svg>
+                            <IconNotRecommended />
                             <span className="text">채널의 게시물 추천 안함</span>
                           </button>
                         </div>
@@ -717,13 +611,13 @@ function App() {
                     <div className="button_wrap">
                       <button type="button" className="button_add">
                         <span className="icon">
-                          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M12 3.67c-4.58 0-8.33 3.75-8.33 8.33s3.75 8.33 8.33 8.33 8.33-3.75 8.33-8.33S16.58 3.67 12 3.67zm3.5 11.83l-4.33-2.67v-5h1.25v4.34l3.75 2.25-.67 1.08z"></path></g></svg>
+                          <IconLater/>
                         </span>
                         <span className="text">나중에 볼 동영상</span>
                       </button>
                       <button type="button" className="button_add">
                         <span className="icon">
-                          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M9,10 L18,10 L18,12 L9,12 L9,10 Z M6,6 L18,6 L18,8 L6,8 L6,6 Z M12,14 L18,14 L18,16 L12,16 L12,14 Z M6,12 L6,18 L10,15 L6,12 Z"></path></g></svg>
+                          <IconAdd />
                         </span>
                         <span className="text">목록에 추가</span>
                       </button>
@@ -741,7 +635,7 @@ function App() {
                         {/*[D] 인증된 채널에만 .icon_authroized 추가*/}
                         <span className="icon_authorized">
                           <span className="blind">인증됨</span>
-                          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path fill-rule="evenodd" clip-rule="evenodd" d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10 S17.52,2,12,2z M9.92,17.93l-4.95-4.95l2.05-2.05l2.9,2.9l7.35-7.35l2.05,2.05L9.92,17.93z"></path></g></svg>
+                          <IconAuthorized />
                         </span>
                       </a>
                       <a href="#" className="information_wrap">
@@ -767,19 +661,11 @@ function App() {
                       <div className="dropdown_option">
                         <div className="dropdown_section">
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M9,10 L18,10 L18,12 L9,12 L9,10 Z M6,6 L18,6 L18,8 L6,8 L6,6 Z M12,14 L18,14 L18,16 L12,16 L12,14 Z M6,12 L6,18 L10,15 L6,12 Z"></path>
-                              </g>
-                            </svg>
+                            <IconAdd />
                             <span className="text">목록에 추가</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M12 3.67c-4.58 0-8.33 3.75-8.33 8.33s3.75 8.33 8.33 8.33 8.33-3.75 8.33-8.33S16.58 3.67 12 3.67zm3.5 11.83l-4.33-2.67v-5h1.25v4.34l3.75 2.25-.67 1.08z"></path>
-                              </g>
-                            </svg>
+                            <IconLater/>
                             <span className="text">나중에 볼 동영상에 저장</span>
                           </button>
                           <button type="button" className="item">
@@ -793,28 +679,15 @@ function App() {
                         </div>
                         <div className="dropdown_section">
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g className="style-scope yt-icon">
-                                <path d="M0 0h24v24H0z" fill="none"></path>
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8 0-1.85.63-3.55 1.69-4.9L16.9 18.31C15.55 19.37 13.85 20 12 20zm6.31-3.1L7.1 5.69C8.45 4.63 10.15 4 12 4c4.42 0 8 3.58 8 8 0 1.85-.63 3.55-1.69 4.9z"></path>
-                              </g>
-                            </svg>
+                            <IconUninterested />
                             <span className="text">관심 없음</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M7 11v2h10v-2H7zm5-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
-                              </g>
-                            </svg>
+                            <IconNotRecommended />
                             <span className="text">채널 추천 안함</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"></path>
-                              </g>
-                            </svg>
+                            <IconReport />
                             <span className="text">신고</span>
                           </button>
                         </div>
@@ -832,13 +705,13 @@ function App() {
                     <div className="button_wrap">
                       <button type="button" className="button_add">
                         <span className="icon">
-                          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M12 3.67c-4.58 0-8.33 3.75-8.33 8.33s3.75 8.33 8.33 8.33 8.33-3.75 8.33-8.33S16.58 3.67 12 3.67zm3.5 11.83l-4.33-2.67v-5h1.25v4.34l3.75 2.25-.67 1.08z"></path></g></svg>
+                          <IconLater/>
                         </span>
                         <span className="text">나중에 볼 동영상</span>
                       </button>
                       <button type="button" className="button_add">
                         <span className="icon">
-                          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M9,10 L18,10 L18,12 L9,12 L9,10 Z M6,6 L18,6 L18,8 L6,8 L6,6 Z M12,14 L18,14 L18,16 L12,16 L12,14 Z M6,12 L6,18 L10,15 L6,12 Z"></path></g></svg>
+                          <IconAdd />
                         </span>
                         <span className="text">목록에 추가</span>
                       </button>
@@ -870,19 +743,11 @@ function App() {
                       <div className="dropdown_option">
                         <div className="dropdown_section">
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M9,10 L18,10 L18,12 L9,12 L9,10 Z M6,6 L18,6 L18,8 L6,8 L6,6 Z M12,14 L18,14 L18,16 L12,16 L12,14 Z M6,12 L6,18 L10,15 L6,12 Z"></path>
-                              </g>
-                            </svg>
+                            <IconAdd />
                             <span className="text">목록에 추가</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M12 3.67c-4.58 0-8.33 3.75-8.33 8.33s3.75 8.33 8.33 8.33 8.33-3.75 8.33-8.33S16.58 3.67 12 3.67zm3.5 11.83l-4.33-2.67v-5h1.25v4.34l3.75 2.25-.67 1.08z"></path>
-                              </g>
-                            </svg>
+                            <IconLater/>
                             <span className="text">나중에 볼 동영상에 저장</span>
                           </button>
                           <button type="button" className="item">
@@ -896,28 +761,15 @@ function App() {
                         </div>
                         <div className="dropdown_section">
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g className="style-scope yt-icon">
-                                <path d="M0 0h24v24H0z" fill="none"></path>
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8 0-1.85.63-3.55 1.69-4.9L16.9 18.31C15.55 19.37 13.85 20 12 20zm6.31-3.1L7.1 5.69C8.45 4.63 10.15 4 12 4c4.42 0 8 3.58 8 8 0 1.85-.63 3.55-1.69 4.9z"></path>
-                              </g>
-                            </svg>
+                            <IconUninterested />
                             <span className="text">관심 없음</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M7 11v2h10v-2H7zm5-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
-                              </g>
-                            </svg>
+                            <IconNotRecommended />
                             <span className="text">채널 추천 안함</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"></path>
-                              </g>
-                            </svg>
+                            <IconReport />
                             <span className="text">신고</span>
                           </button>
                         </div>
@@ -938,13 +790,13 @@ function App() {
                     <div className="button_wrap">
                       <button type="button" className="button_add">
                         <span className="icon">
-                          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M12 3.67c-4.58 0-8.33 3.75-8.33 8.33s3.75 8.33 8.33 8.33 8.33-3.75 8.33-8.33S16.58 3.67 12 3.67zm3.5 11.83l-4.33-2.67v-5h1.25v4.34l3.75 2.25-.67 1.08z"></path></g></svg>
+                          <IconLater/>
                         </span>
                         <span className="text">나중에 볼 동영상</span>
                       </button>
                       <button type="button" className="button_add">
                         <span className="icon">
-                          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M9,10 L18,10 L18,12 L9,12 L9,10 Z M6,6 L18,6 L18,8 L6,8 L6,6 Z M12,14 L18,14 L18,16 L12,16 L12,14 Z M6,12 L6,18 L10,15 L6,12 Z"></path></g></svg>
+                          <IconAdd />
                         </span>
                         <span className="text">목록에 추가</span>
                       </button>
@@ -977,19 +829,11 @@ function App() {
                       <div className="dropdown_option">
                         <div className="dropdown_section">
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M9,10 L18,10 L18,12 L9,12 L9,10 Z M6,6 L18,6 L18,8 L6,8 L6,6 Z M12,14 L18,14 L18,16 L12,16 L12,14 Z M6,12 L6,18 L10,15 L6,12 Z"></path>
-                              </g>
-                            </svg>
+                            <IconAdd />
                             <span className="text">목록에 추가</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M12 3.67c-4.58 0-8.33 3.75-8.33 8.33s3.75 8.33 8.33 8.33 8.33-3.75 8.33-8.33S16.58 3.67 12 3.67zm3.5 11.83l-4.33-2.67v-5h1.25v4.34l3.75 2.25-.67 1.08z"></path>
-                              </g>
-                            </svg>
+                            <IconLater/>
                             <span className="text">나중에 볼 동영상에 저장</span>
                           </button>
                           <button type="button" className="item">
@@ -1003,28 +847,15 @@ function App() {
                         </div>
                         <div className="dropdown_section">
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g className="style-scope yt-icon">
-                                <path d="M0 0h24v24H0z" fill="none"></path>
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8 0-1.85.63-3.55 1.69-4.9L16.9 18.31C15.55 19.37 13.85 20 12 20zm6.31-3.1L7.1 5.69C8.45 4.63 10.15 4 12 4c4.42 0 8 3.58 8 8 0 1.85-.63 3.55-1.69 4.9z"></path>
-                              </g>
-                            </svg>
+                            <IconUninterested />
                             <span className="text">관심 없음</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M7 11v2h10v-2H7zm5-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
-                              </g>
-                            </svg>
+                            <IconNotRecommended />
                             <span className="text">채널 추천 안함</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"></path>
-                              </g>
-                            </svg>
+                            <IconReport />
                             <span className="text">신고</span>
                           </button>
                         </div>
@@ -1076,12 +907,7 @@ function App() {
                       <div className="dropdown_option">
                         <div className="dropdown_section">
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g className="style-scope yt-icon">
-                                <path d="M0 0h24v24H0z" fill="none"></path>
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8 0-1.85.63-3.55 1.69-4.9L16.9 18.31C15.55 19.37 13.85 20 12 20zm6.31-3.1L7.1 5.69C8.45 4.63 10.15 4 12 4c4.42 0 8 3.58 8 8 0 1.85-.63 3.55-1.69 4.9z"></path>
-                              </g>
-                            </svg>
+                            <IconUninterested />
                             <span className="text">관심 없음</span>
                           </button>
                         </div>
@@ -1109,13 +935,13 @@ function App() {
                     <div className="button_wrap">
                       <button type="button" className="button_add">
                         <span className="icon">
-                          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M12 3.67c-4.58 0-8.33 3.75-8.33 8.33s3.75 8.33 8.33 8.33 8.33-3.75 8.33-8.33S16.58 3.67 12 3.67zm3.5 11.83l-4.33-2.67v-5h1.25v4.34l3.75 2.25-.67 1.08z"></path></g></svg>
+                          <IconLater/>
                         </span>
                         <span className="text">나중에 볼 동영상</span>
                       </button>
                       <button type="button" className="button_add">
                         <span className="icon">
-                          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M9,10 L18,10 L18,12 L9,12 L9,10 Z M6,6 L18,6 L18,8 L6,8 L6,6 Z M12,14 L18,14 L18,16 L12,16 L12,14 Z M6,12 L6,18 L10,15 L6,12 Z"></path></g></svg>
+                          <IconAdd />
                         </span>
                         <span className="text">목록에 추가</span>
                       </button>
@@ -1132,9 +958,9 @@ function App() {
                         <span className="channel">JTBC Entertainment</span>
                         {/*[D] 인증된 채널에만 .icon_authroized 추가*/}
                         <span className="icon_authorized">
-                      <span className="blind">인증됨</span>
-                      <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path fill-rule="evenodd" clip-rule="evenodd" d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10 S17.52,2,12,2z M9.92,17.93l-4.95-4.95l2.05-2.05l2.9,2.9l7.35-7.35l2.05,2.05L9.92,17.93z"></path></g></svg>
-                    </span>
+                          <span className="blind">인증됨</span>
+                          <IconAuthorized />
+                        </span>
                       </a>
                       <a href="#" className="information_wrap">
                         {/* 스트리밍 방송 */}
@@ -1159,19 +985,11 @@ function App() {
                       <div className="dropdown_option">
                         <div className="dropdown_section">
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M9,10 L18,10 L18,12 L9,12 L9,10 Z M6,6 L18,6 L18,8 L6,8 L6,6 Z M12,14 L18,14 L18,16 L12,16 L12,14 Z M6,12 L6,18 L10,15 L6,12 Z"></path>
-                              </g>
-                            </svg>
+                            <IconAdd />
                             <span className="text">목록에 추가</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M12 3.67c-4.58 0-8.33 3.75-8.33 8.33s3.75 8.33 8.33 8.33 8.33-3.75 8.33-8.33S16.58 3.67 12 3.67zm3.5 11.83l-4.33-2.67v-5h1.25v4.34l3.75 2.25-.67 1.08z"></path>
-                              </g>
-                            </svg>
+                            <IconLater/>
                             <span className="text">나중에 볼 동영상에 저장</span>
                           </button>
                           <button type="button" className="item">
@@ -1185,28 +1003,15 @@ function App() {
                         </div>
                         <div className="dropdown_section">
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g className="style-scope yt-icon">
-                                <path d="M0 0h24v24H0z" fill="none"></path>
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8 0-1.85.63-3.55 1.69-4.9L16.9 18.31C15.55 19.37 13.85 20 12 20zm6.31-3.1L7.1 5.69C8.45 4.63 10.15 4 12 4c4.42 0 8 3.58 8 8 0 1.85-.63 3.55-1.69 4.9z"></path>
-                              </g>
-                            </svg>
+                            <IconUninterested />
                             <span className="text">관심 없음</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M7 11v2h10v-2H7zm5-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
-                              </g>
-                            </svg>
+                            <IconNotRecommended />
                             <span className="text">채널 추천 안함</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"></path>
-                              </g>
-                            </svg>
+                            <IconReport />
                             <span className="text">신고</span>
                           </button>
                         </div>
@@ -1224,13 +1029,13 @@ function App() {
                     <div className="button_wrap">
                       <button type="button" className="button_add">
                         <span className="icon">
-                          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M12 3.67c-4.58 0-8.33 3.75-8.33 8.33s3.75 8.33 8.33 8.33 8.33-3.75 8.33-8.33S16.58 3.67 12 3.67zm3.5 11.83l-4.33-2.67v-5h1.25v4.34l3.75 2.25-.67 1.08z"></path></g></svg>
+                          <IconLater/>
                         </span>
                         <span className="text">나중에 볼 동영상</span>
                       </button>
                       <button type="button" className="button_add">
                         <span className="icon">
-                          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M9,10 L18,10 L18,12 L9,12 L9,10 Z M6,6 L18,6 L18,8 L6,8 L6,6 Z M12,14 L18,14 L18,16 L12,16 L12,14 Z M6,12 L6,18 L10,15 L6,12 Z"></path></g></svg>
+                          <IconAdd />
                         </span>
                         <span className="text">목록에 추가</span>
                       </button>
@@ -1262,19 +1067,11 @@ function App() {
                       <div className="dropdown_option">
                         <div className="dropdown_section">
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M9,10 L18,10 L18,12 L9,12 L9,10 Z M6,6 L18,6 L18,8 L6,8 L6,6 Z M12,14 L18,14 L18,16 L12,16 L12,14 Z M6,12 L6,18 L10,15 L6,12 Z"></path>
-                              </g>
-                            </svg>
+                            <IconAdd />
                             <span className="text">목록에 추가</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M12 3.67c-4.58 0-8.33 3.75-8.33 8.33s3.75 8.33 8.33 8.33 8.33-3.75 8.33-8.33S16.58 3.67 12 3.67zm3.5 11.83l-4.33-2.67v-5h1.25v4.34l3.75 2.25-.67 1.08z"></path>
-                              </g>
-                            </svg>
+                            <IconLater/>
                             <span className="text">나중에 볼 동영상에 저장</span>
                           </button>
                           <button type="button" className="item">
@@ -1288,28 +1085,15 @@ function App() {
                         </div>
                         <div className="dropdown_section">
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g className="style-scope yt-icon">
-                                <path d="M0 0h24v24H0z" fill="none"></path>
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8 0-1.85.63-3.55 1.69-4.9L16.9 18.31C15.55 19.37 13.85 20 12 20zm6.31-3.1L7.1 5.69C8.45 4.63 10.15 4 12 4c4.42 0 8 3.58 8 8 0 1.85-.63 3.55-1.69 4.9z"></path>
-                              </g>
-                            </svg>
+                            <IconUninterested />
                             <span className="text">관심 없음</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M7 11v2h10v-2H7zm5-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
-                              </g>
-                            </svg>
+                            <IconNotRecommended />
                             <span className="text">채널 추천 안함</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"></path>
-                              </g>
-                            </svg>
+                            <IconReport />
                             <span className="text">신고</span>
                           </button>
                         </div>
@@ -1330,13 +1114,13 @@ function App() {
                     <div className="button_wrap">
                       <button type="button" className="button_add">
                         <span className="icon">
-                          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M12 3.67c-4.58 0-8.33 3.75-8.33 8.33s3.75 8.33 8.33 8.33 8.33-3.75 8.33-8.33S16.58 3.67 12 3.67zm3.5 11.83l-4.33-2.67v-5h1.25v4.34l3.75 2.25-.67 1.08z"></path></g></svg>
+                          <IconLater/>
                         </span>
                         <span className="text">나중에 볼 동영상</span>
                       </button>
                       <button type="button" className="button_add">
                         <span className="icon">
-                          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M9,10 L18,10 L18,12 L9,12 L9,10 Z M6,6 L18,6 L18,8 L6,8 L6,6 Z M12,14 L18,14 L18,16 L12,16 L12,14 Z M6,12 L6,18 L10,15 L6,12 Z"></path></g></svg>
+                          <IconAdd />
                         </span>
                         <span className="text">목록에 추가</span>
                       </button>
@@ -1369,19 +1153,11 @@ function App() {
                       <div className="dropdown_option">
                         <div className="dropdown_section">
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M9,10 L18,10 L18,12 L9,12 L9,10 Z M6,6 L18,6 L18,8 L6,8 L6,6 Z M12,14 L18,14 L18,16 L12,16 L12,14 Z M6,12 L6,18 L10,15 L6,12 Z"></path>
-                              </g>
-                            </svg>
+                            <IconAdd />
                             <span className="text">목록에 추가</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M12 3.67c-4.58 0-8.33 3.75-8.33 8.33s3.75 8.33 8.33 8.33 8.33-3.75 8.33-8.33S16.58 3.67 12 3.67zm3.5 11.83l-4.33-2.67v-5h1.25v4.34l3.75 2.25-.67 1.08z"></path>
-                              </g>
-                            </svg>
+                            <IconLater/>
                             <span className="text">나중에 볼 동영상에 저장</span>
                           </button>
                           <button type="button" className="item">
@@ -1395,28 +1171,15 @@ function App() {
                         </div>
                         <div className="dropdown_section">
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g className="style-scope yt-icon">
-                                <path d="M0 0h24v24H0z" fill="none"></path>
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8 0-1.85.63-3.55 1.69-4.9L16.9 18.31C15.55 19.37 13.85 20 12 20zm6.31-3.1L7.1 5.69C8.45 4.63 10.15 4 12 4c4.42 0 8 3.58 8 8 0 1.85-.63 3.55-1.69 4.9z"></path>
-                              </g>
-                            </svg>
+                            <IconUninterested />
                             <span className="text">관심 없음</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M7 11v2h10v-2H7zm5-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
-                              </g>
-                            </svg>
+                            <IconNotRecommended />
                             <span className="text">채널 추천 안함</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"></path>
-                              </g>
-                            </svg>
+                            <IconReport />
                             <span className="text">신고</span>
                           </button>
                         </div>
@@ -1468,12 +1231,7 @@ function App() {
                       <div className="dropdown_option">
                         <div className="dropdown_section">
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g className="style-scope yt-icon">
-                                <path d="M0 0h24v24H0z" fill="none"></path>
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8 0-1.85.63-3.55 1.69-4.9L16.9 18.31C15.55 19.37 13.85 20 12 20zm6.31-3.1L7.1 5.69C8.45 4.63 10.15 4 12 4c4.42 0 8 3.58 8 8 0 1.85-.63 3.55-1.69 4.9z"></path>
-                              </g>
-                            </svg>
+                            <IconUninterested />
                             <span className="text">관심 없음</span>
                           </button>
                         </div>
@@ -1508,13 +1266,13 @@ function App() {
                     <div className="button_wrap">
                       <button type="button" className="button_add">
                         <span className="icon">
-                          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M12 3.67c-4.58 0-8.33 3.75-8.33 8.33s3.75 8.33 8.33 8.33 8.33-3.75 8.33-8.33S16.58 3.67 12 3.67zm3.5 11.83l-4.33-2.67v-5h1.25v4.34l3.75 2.25-.67 1.08z"></path></g></svg>
+                          <IconLater/>
                         </span>
                         <span className="text">나중에 볼 동영상</span>
                       </button>
                       <button type="button" className="button_add">
                         <span className="icon">
-                          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M9,10 L18,10 L18,12 L9,12 L9,10 Z M6,6 L18,6 L18,8 L6,8 L6,6 Z M12,14 L18,14 L18,16 L12,16 L12,14 Z M6,12 L6,18 L10,15 L6,12 Z"></path></g></svg>
+                          <IconAdd />
                         </span>
                         <span className="text">목록에 추가</span>
                       </button>
@@ -1532,7 +1290,7 @@ function App() {
                         {/*[D] 인증된 채널에만 .icon_authroized 추가 */}
                         <span className="icon_authorized">
                           <span className="blind">인증됨</span>
-                          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path fill-rule="evenodd" clip-rule="evenodd" d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10 S17.52,2,12,2z M9.92,17.93l-4.95-4.95l2.05-2.05l2.9,2.9l7.35-7.35l2.05,2.05L9.92,17.93z"></path></g></svg>
+                          <IconAuthorized />
                         </span>
                       </a>
                       <a href="#" className="information_wrap">
@@ -1558,19 +1316,11 @@ function App() {
                       <div className="dropdown_option">
                         <div className="dropdown_section">
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M9,10 L18,10 L18,12 L9,12 L9,10 Z M6,6 L18,6 L18,8 L6,8 L6,6 Z M12,14 L18,14 L18,16 L12,16 L12,14 Z M6,12 L6,18 L10,15 L6,12 Z"></path>
-                              </g>
-                            </svg>
+                            <IconAdd />
                             <span className="text">목록에 추가</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M12 3.67c-4.58 0-8.33 3.75-8.33 8.33s3.75 8.33 8.33 8.33 8.33-3.75 8.33-8.33S16.58 3.67 12 3.67zm3.5 11.83l-4.33-2.67v-5h1.25v4.34l3.75 2.25-.67 1.08z"></path>
-                              </g>
-                            </svg>
+                            <IconLater/>
                             <span className="text">나중에 볼 동영상에 저장</span>
                           </button>
                           <button type="button" className="item">
@@ -1584,28 +1334,15 @@ function App() {
                         </div>
                         <div className="dropdown_section">
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g className="style-scope yt-icon">
-                                <path d="M0 0h24v24H0z" fill="none"></path>
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8 0-1.85.63-3.55 1.69-4.9L16.9 18.31C15.55 19.37 13.85 20 12 20zm6.31-3.1L7.1 5.69C8.45 4.63 10.15 4 12 4c4.42 0 8 3.58 8 8 0 1.85-.63 3.55-1.69 4.9z"></path>
-                              </g>
-                            </svg>
+                            <IconUninterested />
                             <span className="text">관심 없음</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M7 11v2h10v-2H7zm5-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
-                              </g>
-                            </svg>
+                            <IconNotRecommended />
                             <span className="text">채널 추천 안함</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"></path>
-                              </g>
-                            </svg>
+                            <IconReport />
                             <span className="text">신고</span>
                           </button>
                         </div>
@@ -1623,13 +1360,13 @@ function App() {
                     <div className="button_wrap">
                       <button type="button" className="button_add">
                         <span className="icon">
-                          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M12 3.67c-4.58 0-8.33 3.75-8.33 8.33s3.75 8.33 8.33 8.33 8.33-3.75 8.33-8.33S16.58 3.67 12 3.67zm3.5 11.83l-4.33-2.67v-5h1.25v4.34l3.75 2.25-.67 1.08z"></path></g></svg>
+                          <IconLater/>
                         </span>
                         <span className="text">나중에 볼 동영상</span>
                       </button>
                       <button type="button" className="button_add">
                         <span className="icon">
-                          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M9,10 L18,10 L18,12 L9,12 L9,10 Z M6,6 L18,6 L18,8 L6,8 L6,6 Z M12,14 L18,14 L18,16 L12,16 L12,14 Z M6,12 L6,18 L10,15 L6,12 Z"></path></g></svg>
+                          <IconAdd />
                         </span>
                         <span className="text">목록에 추가</span>
                       </button>
@@ -1661,19 +1398,11 @@ function App() {
                       <div className="dropdown_option">
                         <div className="dropdown_section">
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M9,10 L18,10 L18,12 L9,12 L9,10 Z M6,6 L18,6 L18,8 L6,8 L6,6 Z M12,14 L18,14 L18,16 L12,16 L12,14 Z M6,12 L6,18 L10,15 L6,12 Z"></path>
-                              </g>
-                            </svg>
+                            <IconAdd />
                             <span className="text">목록에 추가</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M12 3.67c-4.58 0-8.33 3.75-8.33 8.33s3.75 8.33 8.33 8.33 8.33-3.75 8.33-8.33S16.58 3.67 12 3.67zm3.5 11.83l-4.33-2.67v-5h1.25v4.34l3.75 2.25-.67 1.08z"></path>
-                              </g>
-                            </svg>
+                            <IconLater/>
                             <span className="text">나중에 볼 동영상에 저장</span>
                           </button>
                           <button type="button" className="item">
@@ -1687,28 +1416,15 @@ function App() {
                         </div>
                         <div className="dropdown_section">
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g className="style-scope yt-icon">
-                                <path d="M0 0h24v24H0z" fill="none"></path>
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8 0-1.85.63-3.55 1.69-4.9L16.9 18.31C15.55 19.37 13.85 20 12 20zm6.31-3.1L7.1 5.69C8.45 4.63 10.15 4 12 4c4.42 0 8 3.58 8 8 0 1.85-.63 3.55-1.69 4.9z"></path>
-                              </g>
-                            </svg>
+                            <IconUninterested />
                             <span className="text">관심 없음</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M7 11v2h10v-2H7zm5-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
-                              </g>
-                            </svg>
+                            <IconNotRecommended />
                             <span className="text">채널 추천 안함</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"></path>
-                              </g>
-                            </svg>
+                            <IconReport />
                             <span className="text">신고</span>
                           </button>
                         </div>
@@ -1729,13 +1445,13 @@ function App() {
                     <div className="button_wrap">
                       <button type="button" className="button_add">
                         <span className="icon">
-                          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M12 3.67c-4.58 0-8.33 3.75-8.33 8.33s3.75 8.33 8.33 8.33 8.33-3.75 8.33-8.33S16.58 3.67 12 3.67zm3.5 11.83l-4.33-2.67v-5h1.25v4.34l3.75 2.25-.67 1.08z"></path></g></svg>
+                          <IconLater/>
                         </span>
                         <span className="text">나중에 볼 동영상</span>
                       </button>
                       <button type="button" className="button_add">
                         <span className="icon">
-                          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M9,10 L18,10 L18,12 L9,12 L9,10 Z M6,6 L18,6 L18,8 L6,8 L6,6 Z M12,14 L18,14 L18,16 L12,16 L12,14 Z M6,12 L6,18 L10,15 L6,12 Z"></path></g></svg>
+                          <IconAdd />
                         </span>
                         <span className="text">목록에 추가</span>
                       </button>
@@ -1768,19 +1484,11 @@ function App() {
                       <div className="dropdown_option">
                         <div className="dropdown_section">
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M9,10 L18,10 L18,12 L9,12 L9,10 Z M6,6 L18,6 L18,8 L6,8 L6,6 Z M12,14 L18,14 L18,16 L12,16 L12,14 Z M6,12 L6,18 L10,15 L6,12 Z"></path>
-                              </g>
-                            </svg>
+                            <IconAdd />
                             <span className="text">목록에 추가</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M12 3.67c-4.58 0-8.33 3.75-8.33 8.33s3.75 8.33 8.33 8.33 8.33-3.75 8.33-8.33S16.58 3.67 12 3.67zm3.5 11.83l-4.33-2.67v-5h1.25v4.34l3.75 2.25-.67 1.08z"></path>
-                              </g>
-                            </svg>
+                            <IconLater/>
                             <span className="text">나중에 볼 동영상에 저장</span>
                           </button>
                           <button type="button" className="item">
@@ -1794,28 +1502,15 @@ function App() {
                         </div>
                         <div className="dropdown_section">
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g className="style-scope yt-icon">
-                                <path d="M0 0h24v24H0z" fill="none"></path>
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8 0-1.85.63-3.55 1.69-4.9L16.9 18.31C15.55 19.37 13.85 20 12 20zm6.31-3.1L7.1 5.69C8.45 4.63 10.15 4 12 4c4.42 0 8 3.58 8 8 0 1.85-.63 3.55-1.69 4.9z"></path>
-                              </g>
-                            </svg>
+                            <IconUninterested />
                             <span className="text">관심 없음</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M7 11v2h10v-2H7zm5-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
-                              </g>
-                            </svg>
+                            <IconNotRecommended />
                             <span className="text">채널 추천 안함</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"></path>
-                              </g>
-                            </svg>
+                            <IconReport />
                             <span className="text">신고</span>
                           </button>
                         </div>
@@ -1867,12 +1562,7 @@ function App() {
                       <div className="dropdown_option">
                         <div className="dropdown_section">
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g className="style-scope yt-icon">
-                                <path d="M0 0h24v24H0z" fill="none"></path>
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8 0-1.85.63-3.55 1.69-4.9L16.9 18.31C15.55 19.37 13.85 20 12 20zm6.31-3.1L7.1 5.69C8.45 4.63 10.15 4 12 4c4.42 0 8 3.58 8 8 0 1.85-.63 3.55-1.69 4.9z"></path>
-                              </g>
-                            </svg>
+                            <IconUninterested />
                             <span className="text">관심 없음</span>
                           </button>
                         </div>
