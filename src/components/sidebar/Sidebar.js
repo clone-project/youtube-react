@@ -68,7 +68,7 @@ function Sidebar(props) {
       {/*[D] layer 여백 클릭 시 open 클래스 제거.*/}
       <div className="layer_content" ref={ menuElement } role="menu">
         <div className="lnb_top_wrap">
-          <button type="button" className="button_lnb" aria-expanded={`${isOpenMenu}`} aria-haspopup="menu" onClick={ closeMenu }>
+          <button type="button" className="button_lnb" aria-expanded={ isOpenMenu } aria-haspopup="menu" onClick={ closeMenu }>
             <span className="blind">메뉴</span>
             <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="icon_menu"><g><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></g></svg>
           </button>
