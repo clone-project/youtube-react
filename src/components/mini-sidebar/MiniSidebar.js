@@ -5,18 +5,19 @@ function MiniSidebar() {
     <div className="mini_lnb">
       <ul role="menu" className="mini_lnb_list">
         <li role="presentation" className="list_item">
-          {/*[D] 현재 페이지에 클래스 .on 추가 및 aria-selected 값 true로 변경*/}
-          <a href="/" role="menuitem" className="link on" aria-selected="true">
+          {/*[D] 현재 페이지에 클래스 .on 추가 <span class="blind">선택됨</span> 추가*/}
+          <a href="/" role="menuitem" className="link on">
             <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
               <g>
                 <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8"></path>
               </g>
             </svg>
             <span className="text">홈</span>
+            <span className="blind">선택됨</span>
           </a>
         </li>
         <li role="presentation" className="list_item">
-          <a href="/feed/trending" role="menuitem" className="link" aria-selected="false">
+          <a href="/feed/trending" role="menuitem" className="link">
             <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
               <g>
                 <path
@@ -27,7 +28,7 @@ function MiniSidebar() {
           </a>
         </li>
         <li role="presentation" className="list_item">
-          <a href="/feed/subscriptions" role="menuitem" className="link" aria-selected="false">
+          <a href="/feed/subscriptions" role="menuitem" className="link">
             <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
               <g>
                 <path
@@ -38,7 +39,7 @@ function MiniSidebar() {
           </a>
         </li>
         <li role="presentation" className="list_item">
-          <a href="/feed/library" role="menuitem" className="link" aria-selected="false">
+          <a href="/feed/library" role="menuitem" className="link">
             <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
               <g>
                 <path fill="none" d="M0 0h24v24H0z"></path>

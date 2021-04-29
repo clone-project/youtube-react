@@ -23,7 +23,7 @@ function Gnb(props) {
   return (
     <header className="gnb">
       <div className="left_section">
-        <button type="button" className="button_lnb" aria-expanded={`${isOpenMenu}`} aria-haspopup="menu" onClick={ openMenu }>
+        <button type="button" className="button_lnb" aria-expanded={ isOpenMenu } aria-haspopup="menu" onClick={ openMenu }>
           <span className="blind">메뉴</span>
           <IconMenu />
         </button>
@@ -44,7 +44,7 @@ function Gnb(props) {
           <GnbDropdown data={ DropdownData.dropdowns[0] } />
         </div>
         <div className="app_area">
-          <button type="button" className="button_app" aria-haspopup="menu" aria-expanded={`${isOpenDropdown}`} onClick={ openDropdown }>
+          <button type="button" className="button_app" aria-haspopup="menu" aria-expanded={ isOpenDropdown } onClick={ openDropdown }>
             <span className="blind">YouTube 앱</span>
             <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style icon_app">
               <g>

@@ -1,5 +1,3 @@
-import React, { useState } from 'react';
-
 function GnbDropdown(props) {
   const { data, isOpen } = props;
 

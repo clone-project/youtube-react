@@ -21,14 +21,14 @@ function GnbSearch() {
             <ul className="keyword_list">
               <li className="list_item">
                 <span className="item_inner">
-                  <a href="#" className="link_keyword">aaa</a>
+                  <a href="https://www.youtube.com/results?search_query=aaa" className="link_keyword">aaa</a>
                   <button type="button" className="button_delete">삭제</button>
                 </span>
                 <span className="deleted_keyword">추천 검색어 삭제됨</span>
               </li>
               <li className="list_item">
                 <span className="item_inner">
-                  <a href="#" className="link_keyword">bbb</a>
+                  <a href="https://www.youtube.com/results?search_query=bbb" className="link_keyword">bbb</a>
                   <button type="button" className="button_delete">삭제</button>
                 </span>
                 <span className="deleted_keyword">추천 검색어 삭제됨</span>
@@ -36,14 +36,14 @@ function GnbSearch() {
               {/*[D] 삭제 클릭 시 .list_item 에 .is_deleted 클래스 추가.*/}
               <li className="list_item is_deleted">
                 <span className="item_inner">
-                  <a href="#" className="link_keyword">ccc</a>
+                  <a href="https://www.youtube.com/results?search_query=ccc" className="link_keyword">ccc</a>
                   <button type="button" className="button_delete">삭제</button>
                 </span>
                 <span className="deleted_keyword">추천 검색어 삭제됨</span>
               </li>
               <li className="list_item">
                 <span className="item_inner">
-                   <a href="#" className="link_keyword">가나다라마</a>
+                   <a href="https://www.youtube.com/results?search_query=가나다라마" className="link_keyword">가나다라마</a>
                   <button type="button" className="button_delete">삭제</button>
                 </span>
                 <span className="deleted_keyword">추천 검색어 삭제됨</span>
