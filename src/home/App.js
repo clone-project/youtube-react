@@ -11,6 +11,12 @@ import { ReactComponent as IconSave } from "../assets/icons/home/save-playlist.s
 import { ReactComponent as IconUninterested } from "../assets/icons/home/uninterested.svg"
 import { ReactComponent as IconNotRecommended } from "../assets/icons/home/not-recommended.svg"
 import { ReactComponent as IconReport } from "../assets/icons/home/report.svg"
+import { ReactComponent as IconMix } from "../assets/icons/home/mix-list.svg"
+import { ReactComponent as IconPlay } from "../assets/icons/home/play.svg"
+import { ReactComponent as IconLike } from "../assets/icons/home/like.svg"
+import { ReactComponent as IconDislike } from "../assets/icons/home/dislike.svg"
+import { ReactComponent as IconComment } from "../assets/icons/home/comment.svg"
+import { ReactComponent as IconMore } from "../assets/icons/home/show-more.svg"
 import "./App.scss";
 
 function App() {
@@ -232,11 +238,7 @@ function App() {
                     <div className="option_wrap">
                       <button type="button" className="button_option">
                         <span className="blind">작업 메뉴</span>
-                        <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="icon_option">
-                          <g>
-                            <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
-                          </g>
-                        </svg>
+                        <IconOption />
                       </button>
                       <div className="dropdown_option">
                         <div className="dropdown_section">
@@ -249,11 +251,7 @@ function App() {
                             <span className="text">나중에 볼 동영상에 저장</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M14 10H2v2h12v-2zm0-4H2v2h12V6zm4 8v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM2 16h8v-2H2v2z"></path>
-                              </g>
-                            </svg>
+                            <IconSave />
                             <span className="text">재생목록에 저장</span>
                           </button>
                         </div>
@@ -283,18 +281,10 @@ function App() {
                         <div className="playlist_information">
                           <span className="blind">영상 수</span>
                           <div className="text">50+</div>
-                          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                            <g>
-                              <path d="M16.94 6.9l-1.4 1.46C16.44 9.3 17 10.58 17 12s-.58 2.7-1.48 3.64l1.4 1.45C18.22 15.74 19 13.94 19 12s-.8-3.8-2.06-5.1zM23 12c0-3.12-1.23-5.95-3.23-8l-1.4 1.45C19.97 7.13 21 9.45 21 12s-1 4.9-2.64 6.55l1.4 1.45c2-2.04 3.24-4.87 3.24-8zM7.06 17.1l1.4-1.46C7.56 14.7 7 13.42 7 12s.6-2.7 1.5-3.64L7.08 6.9C5.78 8.2 5 10 5 12s.8 3.8 2.06 5.1zM1 12c0 3.12 1.23 5.95 3.23 8l1.4-1.45C4.03 16.87 3 14.55 3 12s1-4.9 2.64-6.55L4.24 4C2.24 6.04 1 8.87 1 12zm9-3.32v6.63l5-3.3-5-3.3z"></path>
-                            </g>
-                          </svg>
+                          <IconMix />
                         </div>
                         <div className="layer_dimmed">
-                          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="icon_play">
-                            <g>
-                              <path d="M8 5v14l11-7z"></path>
-                            </g>
-                          </svg>
+                          <IconPlay />
                           <span className="text">모두 재생</span>
                         </div>
                     </a>
@@ -310,11 +300,7 @@ function App() {
                       {/*[D] 버튼 클릭시 .dropdown_option에 .open 추가*/}
                       <button type="button" className="button_option">
                         <span className="blind">작업 메뉴</span>
-                        <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="icon_option">
-                          <g>
-                            <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
-                          </g>
-                        </svg>
+                        <IconOption />
                       </button>
                       <div className="dropdown_option">
                         <div className="dropdown_section">
@@ -363,38 +349,21 @@ function App() {
                   <div className="button_area">
                     {/*[D] 버튼 클릭 시 aria-pressed 값 변경 및 숫자 + 1*/}
                     <button type="button" className="button_like" aria-pressed="false">
-                      <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                        <g>
-                          <path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-1.91l-.01-.01L23 10z"></path>
-                        </g>
-                      </svg>
+                      <IconLike />
                       <span className="blind">좋아요</span>666<span className="blind">개 추가됨</span></button>
                     <button type="button" className="button_dislike" aria-pressed="false">
-                      <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                        <g>
-                          <path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v1.91l.01.01L1 14c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"></path>
-                        </g>
-                      </svg>
+                      <IconDislike />
                       <span className="blind">싫어요</span>
                     </button>
                     <div className="right_wrap">
                       <a href="#" className="link_comment">
-                        <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                          <g>
-                            <path d="M21.99 4c0-1.1-.89-2-1.99-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4-.01-18zM18 14H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"></path>
-                            <path d="M0 0h24v24H0z" fill="none"></path>
-                          </g>
-                        </svg>
+                        <IconComment />
                         <span className="blind">댓글</span>20<span className="blind">개</span>
                       </a>
                       <div className="option_area">
                         {/*[D] 버튼 클릭 시 aria-expanded 추가*/}
                         <button type="button" className="button_option" aria-haspopup="dialog" aria-expanded="false">
-                          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                            <g>
-                              <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
-                            </g>
-                          </svg>
+                          <IconOption />
                           <span className="blind">더보기</span>
                         </button>
                         {/*[D] .button_option 클릭 시 .dropdown_option에 .open 클래스 추가*/}
@@ -404,12 +373,7 @@ function App() {
                             <span className="text">신고</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M0 0h24v24H0z" fill="none"></path>
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8 0-1.85.63-3.55 1.69-4.9L16.9 18.31C15.55 19.37 13.85 20 12 20zm6.31-3.1L7.1 5.69C8.45 4.63 10.15 4 12 4c4.42 0 8 3.58 8 8 0 1.85-.63 3.55-1.69 4.9z"></path>
-                              </g>
-                            </svg>
+                            <IconUninterested />
                             <span className="text">관심없음</span>
                           </button>
                           <button type="button" className="item">
@@ -444,38 +408,21 @@ function App() {
                   <div className="button_area">
                     {/*[D] 버튼 클릭 시 aria-pressed 값 변경 및 숫자 + 1*/}
                     <button type="button" className="button_like" aria-pressed="false">
-                      <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                        <g>
-                          <path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-1.91l-.01-.01L23 10z"></path>
-                        </g>
-                      </svg>
+                      <IconLike />
                       <span className="blind">좋아요</span>2.4천<span className="blind">개 추가됨</span>
                     </button>
                     <button type="button" className="button_dislike" aria-pressed="false">
-                      <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                        <g>
-                          <path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v1.91l.01.01L1 14c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"></path>
-                        </g>
-                      </svg>
+                      <IconDislike />
                       <span className="blind">싫어요</span>
                     </button>
                     <div className="right_wrap">
                       <a href="#" className="link_comment">
-                        <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                          <g>
-                            <path d="M21.99 4c0-1.1-.89-2-1.99-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4-.01-18zM18 14H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"></path>
-                            <path d="M0 0h24v24H0z" fill="none"></path>
-                          </g>
-                        </svg>
+                        <IconComment />
                         <span className="blind">댓글</span>127<span className="blind">개</span>
                       </a>
                       <div className="option_area">
                         <button type="button" className="button_option" aria-haspopup="dialog" aria-expanded="false">
-                          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                            <g>
-                              <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
-                            </g>
-                          </svg>
+                          <IconOption />
                           <span className="blind">더보기</span>
                         </button>
                         <div className="dropdown_option">
@@ -484,12 +431,7 @@ function App() {
                             <span className="text">신고</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M0 0h24v24H0z" fill="none"></path>
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8 0-1.85.63-3.55 1.69-4.9L16.9 18.31C15.55 19.37 13.85 20 12 20zm6.31-3.1L7.1 5.69C8.45 4.63 10.15 4 12 4c4.42 0 8 3.58 8 8 0 1.85-.63 3.55-1.69 4.9z"></path>
-                              </g>
-                            </svg>
+                            <IconUninterested />
                             <span className="text">관심없음</span>
                           </button>
                           <button type="button" className="item">
@@ -528,37 +470,20 @@ function App() {
                   <div className="button_area">
                     {/*[D] 버튼 클릭 시 aria-pressed 값 변경 및 숫자 + 1*/}
                     <button type="button" className="button_like" aria-pressed="false">
-                      <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                        <g>
-                          <path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-1.91l-.01-.01L23 10z"></path>
-                        </g>
-                      </svg>
+                      <IconLike />
                       <span className="blind">좋아요</span>5.4천<span className="blind">개 추가됨</span></button>
                     <button type="button" className="button_dislike" aria-pressed="false">
-                      <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                        <g>
-                          <path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v1.91l.01.01L1 14c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"></path>
-                        </g>
-                      </svg>
+                      <IconDislike />
                       <span className="blind">싫어요</span>
                     </button>
                     <div className="right_wrap">
                       <a href="#" className="link_comment">
-                        <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                          <g>
-                            <path d="M21.99 4c0-1.1-.89-2-1.99-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4-.01-18zM18 14H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"></path>
-                            <path d="M0 0h24v24H0z" fill="none"></path>
-                          </g>
-                        </svg>
+                        <IconComment />
                         <span className="blind">댓글</span>464<span className="blind">개</span>
                       </a>
                       <div className="option_area">
                         <button type="button" className="button_option" aria-haspopup="dialog" aria-expanded="false">
-                          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                            <g>
-                              <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
-                            </g>
-                          </svg>
+                          <IconOption />
                           <span className="blind">더보기</span>
                         </button>
                         <div className="dropdown_option">
@@ -567,12 +492,7 @@ function App() {
                             <span className="text">신고</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M0 0h24v24H0z" fill="none"></path>
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8 0-1.85.63-3.55 1.69-4.9L16.9 18.31C15.55 19.37 13.85 20 12 20zm6.31-3.1L7.1 5.69C8.45 4.63 10.15 4 12 4c4.42 0 8 3.58 8 8 0 1.85-.63 3.55-1.69 4.9z"></path>
-                              </g>
-                            </svg>
+                            <IconUninterested />
                             <span className="text">관심없음</span>
                           </button>
                           <button type="button" className="item">
@@ -586,11 +506,7 @@ function App() {
                 </li>
               </ul>
               <button type="button" className="button_more">
-                <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="icon_more">
-                  <g>
-                    <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
-                  </g>
-                </svg>
+                <IconMore />
                 <span className="blind">더보기</span>
               </button>
             </div>
@@ -652,11 +568,7 @@ function App() {
                       {/*[D] 버튼 클릭시 .dropdown_option에 .open 추가 */}
                       <button type="button" className="button_option">
                         <span className="blind">작업 메뉴</span>
-                        <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="icon_option">
-                          <g>
-                            <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
-                          </g>
-                        </svg>
+                        <IconOption />
                       </button>
                       <div className="dropdown_option">
                         <div className="dropdown_section">
@@ -669,11 +581,7 @@ function App() {
                             <span className="text">나중에 볼 동영상에 저장</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M14 10H2v2h12v-2zm0-4H2v2h12V6zm4 8v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM2 16h8v-2H2v2z"></path>
-                              </g>
-                            </svg>
+                            <IconSave />
                             <span className="text">재생목록에 저장</span>
                           </button>
                         </div>
@@ -734,11 +642,7 @@ function App() {
                     <div className="option_wrap">
                       <button type="button" className="button_option">
                         <span className="blind">작업 메뉴</span>
-                        <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="icon_option">
-                          <g>
-                            <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
-                          </g>
-                        </svg>
+                        <IconOption />
                       </button>
                       <div className="dropdown_option">
                         <div className="dropdown_section">
@@ -751,11 +655,7 @@ function App() {
                             <span className="text">나중에 볼 동영상에 저장</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M14 10H2v2h12v-2zm0-4H2v2h12V6zm4 8v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM2 16h8v-2H2v2z"></path>
-                              </g>
-                            </svg>
+                            <IconSave />
                             <span className="text">재생목록에 저장</span>
                           </button>
                         </div>
@@ -820,11 +720,7 @@ function App() {
                     <div className="option_wrap">
                       <button type="button" className="button_option">
                         <span className="blind">작업 메뉴</span>
-                        <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="icon_option">
-                          <g>
-                            <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
-                          </g>
-                        </svg>
+                        <IconOption />
                       </button>
                       <div className="dropdown_option">
                         <div className="dropdown_section">
@@ -837,11 +733,7 @@ function App() {
                             <span className="text">나중에 볼 동영상에 저장</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M14 10H2v2h12v-2zm0-4H2v2h12V6zm4 8v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM2 16h8v-2H2v2z"></path>
-                              </g>
-                            </svg>
+                            <IconSave />
                             <span className="text">재생목록에 저장</span>
                           </button>
                         </div>
@@ -871,18 +763,10 @@ function App() {
                         <div className="playlist_information">
                           <span className="blind">영상 수</span>
                           <div className="text">50+</div>
-                          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                            <g>
-                              <path d="M16.94 6.9l-1.4 1.46C16.44 9.3 17 10.58 17 12s-.58 2.7-1.48 3.64l1.4 1.45C18.22 15.74 19 13.94 19 12s-.8-3.8-2.06-5.1zM23 12c0-3.12-1.23-5.95-3.23-8l-1.4 1.45C19.97 7.13 21 9.45 21 12s-1 4.9-2.64 6.55l1.4 1.45c2-2.04 3.24-4.87 3.24-8zM7.06 17.1l1.4-1.46C7.56 14.7 7 13.42 7 12s.6-2.7 1.5-3.64L7.08 6.9C5.78 8.2 5 10 5 12s.8 3.8 2.06 5.1zM1 12c0 3.12 1.23 5.95 3.23 8l1.4-1.45C4.03 16.87 3 14.55 3 12s1-4.9 2.64-6.55L4.24 4C2.24 6.04 1 8.87 1 12zm9-3.32v6.63l5-3.3-5-3.3z"></path>
-                            </g>
-                          </svg>
+                          <IconMix />
                         </div>
                         <div className="layer_dimmed">
-                          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="icon_play">
-                            <g>
-                              <path d="M8 5v14l11-7z"></path>
-                            </g>
-                          </svg>
+                          <IconPlay />
                           <span className="text">모두 재생</span>
                         </div>
                     </a>
@@ -898,11 +782,7 @@ function App() {
                       {/*[D] 버튼 클릭시 .dropdown_option에 .open 추가*/}
                       <button type="button" className="button_option">
                         <span className="blind">작업 메뉴</span>
-                        <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="icon_option">
-                          <g>
-                            <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
-                          </g>
-                        </svg>
+                        <IconOption />
                       </button>
                       <div className="dropdown_option">
                         <div className="dropdown_section">
@@ -976,11 +856,7 @@ function App() {
                       {/*[D] 버튼 클릭시 .dropdown_option에 .open 추가*/}
                       <button type="button" className="button_option">
                         <span className="blind">작업 메뉴</span>
-                        <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="icon_option">
-                          <g>
-                            <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
-                          </g>
-                        </svg>
+                        <IconOption />
                       </button>
                       <div className="dropdown_option">
                         <div className="dropdown_section">
@@ -993,11 +869,7 @@ function App() {
                             <span className="text">나중에 볼 동영상에 저장</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M14 10H2v2h12v-2zm0-4H2v2h12V6zm4 8v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM2 16h8v-2H2v2z"></path>
-                              </g>
-                            </svg>
+                            <IconSave />
                             <span className="text">재생목록에 저장</span>
                           </button>
                         </div>
@@ -1058,11 +930,7 @@ function App() {
                     <div className="option_wrap">
                       <button type="button" className="button_option">
                         <span className="blind">작업 메뉴</span>
-                        <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="icon_option">
-                          <g>
-                            <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
-                          </g>
-                        </svg>
+                        <IconOption />
                       </button>
                       <div className="dropdown_option">
                         <div className="dropdown_section">
@@ -1075,11 +943,7 @@ function App() {
                             <span className="text">나중에 볼 동영상에 저장</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M14 10H2v2h12v-2zm0-4H2v2h12V6zm4 8v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM2 16h8v-2H2v2z"></path>
-                              </g>
-                            </svg>
+                            <IconSave />
                             <span className="text">재생목록에 저장</span>
                           </button>
                         </div>
@@ -1144,11 +1008,7 @@ function App() {
                     <div className="option_wrap">
                       <button type="button" className="button_option">
                         <span className="blind">작업 메뉴</span>
-                        <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="icon_option">
-                          <g>
-                            <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
-                          </g>
-                        </svg>
+                        <IconOption />
                       </button>
                       <div className="dropdown_option">
                         <div className="dropdown_section">
@@ -1161,11 +1021,7 @@ function App() {
                             <span className="text">나중에 볼 동영상에 저장</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M14 10H2v2h12v-2zm0-4H2v2h12V6zm4 8v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM2 16h8v-2H2v2z"></path>
-                              </g>
-                            </svg>
+                            <IconSave />
                             <span className="text">재생목록에 저장</span>
                           </button>
                         </div>
@@ -1195,18 +1051,10 @@ function App() {
                       <div className="playlist_information">
                         <span className="blind">영상 수</span>
                         <div className="text">50+</div>
-                        <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                          <g>
-                            <path d="M16.94 6.9l-1.4 1.46C16.44 9.3 17 10.58 17 12s-.58 2.7-1.48 3.64l1.4 1.45C18.22 15.74 19 13.94 19 12s-.8-3.8-2.06-5.1zM23 12c0-3.12-1.23-5.95-3.23-8l-1.4 1.45C19.97 7.13 21 9.45 21 12s-1 4.9-2.64 6.55l1.4 1.45c2-2.04 3.24-4.87 3.24-8zM7.06 17.1l1.4-1.46C7.56 14.7 7 13.42 7 12s.6-2.7 1.5-3.64L7.08 6.9C5.78 8.2 5 10 5 12s.8 3.8 2.06 5.1zM1 12c0 3.12 1.23 5.95 3.23 8l1.4-1.45C4.03 16.87 3 14.55 3 12s1-4.9 2.64-6.55L4.24 4C2.24 6.04 1 8.87 1 12zm9-3.32v6.63l5-3.3-5-3.3z"></path>
-                          </g>
-                        </svg>
+                        <IconMix />
                       </div>
                       <div className="layer_dimmed">
-                        <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="icon_play">
-                          <g>
-                            <path d="M8 5v14l11-7z"></path>
-                          </g>
-                        </svg>
+                        <IconPlay />
                         <span className="text">모두 재생</span>
                       </div>
                     </a>
@@ -1222,11 +1070,7 @@ function App() {
                       {/*[D] 버튼 클릭시 .dropdown_option에 .open 추가*/}
                       <button type="button" className="button_option">
                         <span className="blind">작업 메뉴</span>
-                        <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="icon_option">
-                          <g>
-                            <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
-                          </g>
-                        </svg>
+                        <IconOption />
                       </button>
                       <div className="dropdown_option">
                         <div className="dropdown_section">
@@ -1241,11 +1085,7 @@ function App() {
                 </li>
               </ul>
               <button type="button" className="button_more">
-                <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="icon_more">
-                  <g>
-                    <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
-                  </g>
-                </svg>
+                <IconMore />
                 <span className="blind">더보기</span>
               </button>
             </div>
@@ -1307,11 +1147,7 @@ function App() {
                       {/* [D] 버튼 클릭시 .dropdown_option에 .open 추가*/}
                       <button type="button" className="button_option">
                         <span className="blind">작업 메뉴</span>
-                        <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="icon_option">
-                          <g>
-                            <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
-                          </g>
-                        </svg>
+                        <IconOption />
                       </button>
                       <div className="dropdown_option">
                         <div className="dropdown_section">
@@ -1324,11 +1160,7 @@ function App() {
                             <span className="text">나중에 볼 동영상에 저장</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M14 10H2v2h12v-2zm0-4H2v2h12V6zm4 8v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM2 16h8v-2H2v2z"></path>
-                              </g>
-                            </svg>
+                            <IconSave />
                             <span className="text">재생목록에 저장</span>
                           </button>
                         </div>
@@ -1389,11 +1221,7 @@ function App() {
                     <div className="option_wrap">
                       <button type="button" className="button_option">
                         <span className="blind">작업 메뉴</span>
-                        <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="icon_option">
-                          <g>
-                            <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
-                          </g>
-                        </svg>
+                        <IconOption />
                       </button>
                       <div className="dropdown_option">
                         <div className="dropdown_section">
@@ -1406,11 +1234,7 @@ function App() {
                             <span className="text">나중에 볼 동영상에 저장</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M14 10H2v2h12v-2zm0-4H2v2h12V6zm4 8v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM2 16h8v-2H2v2z"></path>
-                              </g>
-                            </svg>
+                            <IconSave />
                             <span className="text">재생목록에 저장</span>
                           </button>
                         </div>
@@ -1475,11 +1299,7 @@ function App() {
                     <div className="option_wrap">
                       <button type="button" className="button_option">
                         <span className="blind">작업 메뉴</span>
-                        <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="icon_option">
-                          <g>
-                            <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
-                          </g>
-                        </svg>
+                        <IconOption />
                       </button>
                       <div className="dropdown_option">
                         <div className="dropdown_section">
@@ -1492,11 +1312,7 @@ function App() {
                             <span className="text">나중에 볼 동영상에 저장</span>
                           </button>
                           <button type="button" className="item">
-                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                              <g>
-                                <path d="M14 10H2v2h12v-2zm0-4H2v2h12V6zm4 8v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM2 16h8v-2H2v2z"></path>
-                              </g>
-                            </svg>
+                            <IconSave />
                             <span className="text">재생목록에 저장</span>
                           </button>
                         </div>
@@ -1526,18 +1342,10 @@ function App() {
                       <div className="playlist_information">
                         <span className="blind">영상 수</span>
                         <div className="text">50+</div>
-                        <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style">
-                          <g>
-                            <path d="M16.94 6.9l-1.4 1.46C16.44 9.3 17 10.58 17 12s-.58 2.7-1.48 3.64l1.4 1.45C18.22 15.74 19 13.94 19 12s-.8-3.8-2.06-5.1zM23 12c0-3.12-1.23-5.95-3.23-8l-1.4 1.45C19.97 7.13 21 9.45 21 12s-1 4.9-2.64 6.55l1.4 1.45c2-2.04 3.24-4.87 3.24-8zM7.06 17.1l1.4-1.46C7.56 14.7 7 13.42 7 12s.6-2.7 1.5-3.64L7.08 6.9C5.78 8.2 5 10 5 12s.8 3.8 2.06 5.1zM1 12c0 3.12 1.23 5.95 3.23 8l1.4-1.45C4.03 16.87 3 14.55 3 12s1-4.9 2.64-6.55L4.24 4C2.24 6.04 1 8.87 1 12zm9-3.32v6.63l5-3.3-5-3.3z"></path>
-                          </g>
-                        </svg>
+                        <IconMix />
                       </div>
                       <div className="layer_dimmed">
-                        <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="icon_play">
-                          <g>
-                            <path d="M8 5v14l11-7z"></path>
-                          </g>
-                        </svg>
+                        <IconPlay />
                         <span className="text">모두 재생</span>
                       </div>
                     </a>
@@ -1553,11 +1361,7 @@ function App() {
                       {/* [D] 버튼 클릭시 .dropdown_option에 .open 추가*/}
                       <button type="button" className="button_option">
                         <span className="blind">작업 메뉴</span>
-                        <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="icon_option">
-                          <g>
-                            <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
-                          </g>
-                        </svg>
+                        <IconOption />
                       </button>
                       <div className="dropdown_option">
                         <div className="dropdown_section">
