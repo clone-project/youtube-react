@@ -64,7 +64,7 @@ function GnbAccount(props) {
             <button type="button" className="link_item">
               <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H8c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h12zm-3 5c0-1.66-1.34-3-3-3s-3 1.34-3 3 1.34 3 3 3 3-1.34 3-3zm-9 8v1h12v-1c0-2-4-3.1-6-3.1S8 13 8 15z"></path></g></svg>
               <span className="text">계정 전환</span>
-            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="icon_arrow"><g mirror-in-rtl=""><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></g></svg>
+              <IconArrow />
             </button>
             <button type="button" className="link_item" onClick={ toggleLogin }>
               <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g mirror-in-rtl=""><path d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5c-1.11 0-2 .9-2 2v4h2V5h14v14H5v-4H3v4c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"></path></g></svg>

@@ -57,7 +57,7 @@ function Sidebar(props) {
             recentUploaded &&
             <span className="new_dot"><span className="blind">NEW</span></span>
           }
-          <span class="blind">선택됨</span>
+          <span className="blind">선택됨</span>
         </a>
       </li>
     )
@@ -78,7 +78,7 @@ function Sidebar(props) {
           <div className="menu_section">
             <ul role="menu" className="main_menu_list">
               <li role="presentation"  className="list_item">
-                {/*[D] 현재 페이지에 클래스 .on 추가 및 <span class="blind">선택됨</span> 추가*/}
+                {/*[D] 현재 페이지에 클래스 .on 추가 및 <span className="blind">선택됨</span> 추가*/}
                 <a href="/" role="menuitem" className="link on">
                   <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8"></path></g></svg>
                   <span className="text">홈</span>
@@ -114,7 +114,7 @@ function Sidebar(props) {
           <div className="menu_section">
             <ul role="menu" className="main_menu_list">
               <li role="presentation"  className="list_item">
-                {/*[D] 현재 페이지에 클래스 .on 추가  <span class="blind">선택됨</span> 추가*/}
+                {/*[D] 현재 페이지에 클래스 .on 추가  <span className="blind">선택됨</span> 추가*/}
                 <a href="/#" role="menuitem" className="link">
                   <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" className="svg_style"><g><path fill="none" d="M0 0h24v24H0z"></path><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8 12.5v-9l6 4.5-6 4.5z"></path></g></svg>
                   <span className="text">보관함</span>
