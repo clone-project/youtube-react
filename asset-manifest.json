@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/youtube-react/static/css/main.d776188b.chunk.css",
-    "main.js": "/youtube-react/static/js/main.ad00146c.chunk.js",
-    "main.js.map": "/youtube-react/static/js/main.ad00146c.chunk.js.map",
+    "main.js": "/youtube-react/static/js/main.5cfcb6e3.chunk.js",
+    "main.js.map": "/youtube-react/static/js/main.5cfcb6e3.chunk.js.map",
     "runtime-main.js": "/youtube-react/static/js/runtime-main.9c425619.js",
     "runtime-main.js.map": "/youtube-react/static/js/runtime-main.9c425619.js.map",
     "static/js/2.b691c094.chunk.js": "/youtube-react/static/js/2.b691c094.chunk.js",
@@ -13,19 +13,33 @@
     "static/css/main.d776188b.chunk.css.map": "/youtube-react/static/css/main.d776188b.chunk.css.map",
     "static/js/2.b691c094.chunk.js.LICENSE.txt": "/youtube-react/static/js/2.b691c094.chunk.js.LICENSE.txt",
     "static/media/account-login.8d9d2172.svg": "/youtube-react/static/media/account-login.8d9d2172.svg",
+    "static/media/add-list.6975de0f.svg": "/youtube-react/static/media/add-list.6975de0f.svg",
     "static/media/arrow.45211962.svg": "/youtube-react/static/media/arrow.45211962.svg",
+    "static/media/authorized.219ae083.svg": "/youtube-react/static/media/authorized.219ae083.svg",
     "static/media/close.27221bf5.svg": "/youtube-react/static/media/close.27221bf5.svg",
+    "static/media/comment.f17f11e4.svg": "/youtube-react/static/media/comment.f17f11e4.svg",
+    "static/media/dislike.c7370cd1.svg": "/youtube-react/static/media/dislike.c7370cd1.svg",
+    "static/media/like.75d8df69.svg": "/youtube-react/static/media/like.75d8df69.svg",
     "static/media/logo-premium.efc7b8e3.svg": "/youtube-react/static/media/logo-premium.efc7b8e3.svg",
     "static/media/logo-youtube.1cb31076.svg": "/youtube-react/static/media/logo-youtube.1cb31076.svg",
     "static/media/menu.78fcb840.svg": "/youtube-react/static/media/menu.78fcb840.svg",
+    "static/media/mix-list.e1d9dbea.svg": "/youtube-react/static/media/mix-list.e1d9dbea.svg",
+    "static/media/not-recommended.17b278d7.svg": "/youtube-react/static/media/not-recommended.17b278d7.svg",
+    "static/media/option.3e3bc9e4.svg": "/youtube-react/static/media/option.3e3bc9e4.svg",
     "static/media/option.b1f90c46.svg": "/youtube-react/static/media/option.b1f90c46.svg",
+    "static/media/play.3829ca42.svg": "/youtube-react/static/media/play.3829ca42.svg",
+    "static/media/report.157adf47.svg": "/youtube-react/static/media/report.157adf47.svg",
+    "static/media/save-playlist.0460ea29.svg": "/youtube-react/static/media/save-playlist.0460ea29.svg",
     "static/media/search-back.89687bad.svg": "/youtube-react/static/media/search-back.89687bad.svg",
-    "static/media/search.f83be20f.svg": "/youtube-react/static/media/search.f83be20f.svg"
+    "static/media/search.f83be20f.svg": "/youtube-react/static/media/search.f83be20f.svg",
+    "static/media/show-more.4dd56d83.svg": "/youtube-react/static/media/show-more.4dd56d83.svg",
+    "static/media/uninterested.131cdc64.svg": "/youtube-react/static/media/uninterested.131cdc64.svg",
+    "static/media/watch-later.93fc9dd3.svg": "/youtube-react/static/media/watch-later.93fc9dd3.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.9c425619.js",
     "static/js/2.b691c094.chunk.js",
     "static/css/main.d776188b.chunk.css",
-    "static/js/main.ad00146c.chunk.js"
+    "static/js/main.5cfcb6e3.chunk.js"
   ]
 }
