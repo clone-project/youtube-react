@@ -14,10 +14,9 @@ function GnbDropdown(props) {
     });
 
     return (
-      <>
-        { data.section.length < 2 && <div key={ `${idx}${data.classname}` }>{ listItem }</div> }
-        { data.section.length >= 2 && <div key={ `${idx}${data.classname}` } className="dropdown_section">{ listItem }</div> }
-      </>
+      <div key={ `${idx}${data.classname}` } className={ `${data.section.length >= 2 ? "dropdown_section" : ""}` }>
+        { listItem }
+      </div>
     );
   });
 
