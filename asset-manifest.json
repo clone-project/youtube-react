@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/youtube-react/static/css/main.d776188b.chunk.css",
-    "main.js": "/youtube-react/static/js/main.5cfcb6e3.chunk.js",
-    "main.js.map": "/youtube-react/static/js/main.5cfcb6e3.chunk.js.map",
-    "runtime-main.js": "/youtube-react/static/js/runtime-main.9c425619.js",
-    "runtime-main.js.map": "/youtube-react/static/js/runtime-main.9c425619.js.map",
-    "static/js/2.b691c094.chunk.js": "/youtube-react/static/js/2.b691c094.chunk.js",
-    "static/js/2.b691c094.chunk.js.map": "/youtube-react/static/js/2.b691c094.chunk.js.map",
-    "static/js/3.0361461b.chunk.js": "/youtube-react/static/js/3.0361461b.chunk.js",
-    "static/js/3.0361461b.chunk.js.map": "/youtube-react/static/js/3.0361461b.chunk.js.map",
+    "main.css": "/youtube-react/static/css/main.cc8c3a0f.chunk.css",
+    "main.js": "/youtube-react/static/js/main.d42033cb.chunk.js",
+    "main.js.map": "/youtube-react/static/js/main.d42033cb.chunk.js.map",
+    "runtime-main.js": "/youtube-react/static/js/runtime-main.e106dd45.js",
+    "runtime-main.js.map": "/youtube-react/static/js/runtime-main.e106dd45.js.map",
+    "static/js/2.1937a497.chunk.js": "/youtube-react/static/js/2.1937a497.chunk.js",
+    "static/js/2.1937a497.chunk.js.map": "/youtube-react/static/js/2.1937a497.chunk.js.map",
+    "static/js/3.47163ff6.chunk.js": "/youtube-react/static/js/3.47163ff6.chunk.js",
+    "static/js/3.47163ff6.chunk.js.map": "/youtube-react/static/js/3.47163ff6.chunk.js.map",
     "index.html": "/youtube-react/index.html",
-    "static/css/main.d776188b.chunk.css.map": "/youtube-react/static/css/main.d776188b.chunk.css.map",
-    "static/js/2.b691c094.chunk.js.LICENSE.txt": "/youtube-react/static/js/2.b691c094.chunk.js.LICENSE.txt",
+    "static/css/main.cc8c3a0f.chunk.css.map": "/youtube-react/static/css/main.cc8c3a0f.chunk.css.map",
+    "static/js/2.1937a497.chunk.js.LICENSE.txt": "/youtube-react/static/js/2.1937a497.chunk.js.LICENSE.txt",
     "static/media/account-login.8d9d2172.svg": "/youtube-react/static/media/account-login.8d9d2172.svg",
     "static/media/add-list.6975de0f.svg": "/youtube-react/static/media/add-list.6975de0f.svg",
     "static/media/arrow.45211962.svg": "/youtube-react/static/media/arrow.45211962.svg",
@@ -37,9 +37,9 @@
     "static/media/watch-later.93fc9dd3.svg": "/youtube-react/static/media/watch-later.93fc9dd3.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.9c425619.js",
-    "static/js/2.b691c094.chunk.js",
-    "static/css/main.d776188b.chunk.css",
-    "static/js/main.5cfcb6e3.chunk.js"
+    "static/js/runtime-main.e106dd45.js",
+    "static/js/2.1937a497.chunk.js",
+    "static/css/main.cc8c3a0f.chunk.css",
+    "static/js/main.d42033cb.chunk.js"
   ]
 }
