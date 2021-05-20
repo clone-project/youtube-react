@@ -11,18 +11,31 @@ function VideoItem(props) {
   const { data } = props;
   const { streaming, fullTime, playedTime, thumbnail, channel, title, link, date, count } = data;
   const playedWidth = playedTime / fullTime * 100;
+  const now = new Date();
+
+  function formatRemainedTime(full, played) {
+    const remainedTime = full - played;
+    let hour = Math.floor(remainedTime/3600);
+    let min = Math.floor((remainedTime - (hour*3600))/60);
+    let sec = remainedTime - (hour*3600) - (min*60);
+
+    function addZero(num) {
+      return (num < 10 ? '0' : '') + num;
+    }
+
+    if(hour > 0) return hour + ':' + addZero(min) + ':' + addZero(sec);
+    else return min + ':' + addZero(sec);
+  }
 
   return (
     <li className="list_item">
       <div className="video_area">
         <a href={ link } className="link_video">
           <img src={ thumbnail } className="thumbnail" width="36" height="36" alt="" />
-          {/*[D] 스트리밍일 경우 .time 미노출*/
-            !streaming &&
-            <span id="remained-time" className="time">2:35</span>
+          { !streaming &&
+            <span id="remained-time" className="time">{ formatRemainedTime(fullTime, playedTime) }</span>
           }
           <div className="progress_bar">
-            {/*[D] 재생된 퍼센티지를 inline-style로 추가. ex) width: 50%*/}
             <div className="played_bar" style={{ width: playedWidth + '%'}}></div>
           </div>
         </a>
@@ -43,7 +56,7 @@ function VideoItem(props) {
         }
       </div>
       <div className="text_area">
-        <a href="/#" className="link_profile">
+        <a href={ channel.link } className="link_profile">
           <img src={ channel.profile } className="image_channel" width="36" height="36" alt="" />
         </a>
         <div className="text_wrap">
