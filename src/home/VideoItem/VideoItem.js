@@ -49,6 +49,28 @@ function VideoItem(props) {
     return `${years}년 전`;
   }
 
+  function formatNumber(num) {
+    if (num < 1000) return `${num}`;
+
+    const cheon = (num / 1000).toFixed(1);
+    if (cheon < 100) {
+      if(cheon % 1 === 0) return `${Math.floor(cheon)}천`;
+      else return `${cheon}천`;
+    }
+
+    const man = (num / 10000).toFixed(1);
+    if (man < 10000) {
+      if(man % 1 === 0) return `${Math.floor(man)}만`;
+      else return `${man}만`;
+    }
+
+    const eok = (man / 10000).toFixed(1);
+    if (eok < 10000) {
+      if(eok % 1 === 0) return `${Math.floor(eok)}억`;
+      else return `${eok}억`;
+    }
+  }
+
   return (
     <li className="list_item">
       <div className="video_area">
@@ -93,9 +115,9 @@ function VideoItem(props) {
           <a href="/#" className="information_wrap">
             {
               streaming
-              ? <span className="item">1.5만명 시청 중</span>
+              ? <span className="item">{ formatNumber(count) }명 시청 중</span>
               : <>
-                  <span className="item">조회수 9.4만회</span>
+                  <span className="item">조회수 { formatNumber(count) }회</span>
                   <span className="item">{ formatUploadedPeriod(uploadedDate) }</span>
                 </>
             }
