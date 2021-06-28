@@ -1,4 +1,4 @@
-function formatRemainedTime(full, played) {
+export function formatRemainedTime(full, played) {
   const remainedTime = full - played;
   const hour = Math.floor(remainedTime/3600);
   const min = Math.floor((remainedTime - (hour*3600))/60);
@@ -12,7 +12,7 @@ function formatRemainedTime(full, played) {
   else return `${min}:${addZero(sec)}`;
 }
 
-function formatUploadedPeriod(uploadedDate) {
+export function formatUploadedPeriod(uploadedDate) {
   const secs = Math.floor((new Date() - new Date(uploadedDate)) / 1000);
   if (secs < 60) return '방금 전';
 
@@ -35,7 +35,7 @@ function formatUploadedPeriod(uploadedDate) {
   return `${years}년 전`;
 }
 
-function formatNumber(num) {
+export function formatNumber(num) {
   if (num < 1000) return `${num}`;
 
   const cheon = (num / 1000).toFixed(1);
