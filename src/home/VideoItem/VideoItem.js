@@ -7,47 +7,12 @@ import {ReactComponent as IconUninterested} from "../../assets/icons/home/uninte
 import {ReactComponent as IconNotRecommended} from "../../assets/icons/home/not-recommended.svg";
 import {ReactComponent as IconReport} from "../../assets/icons/home/report.svg";
 
+import { formatRemainedTime, formatNumber, formatUploadedPeriod } from "../../common";
+
 function VideoItem(props) {
   const { data } = props;
   const { streaming, fullTime, playedTime, thumbnail, channel, title, link, uploadedDate, count } = data;
   const playedWidth = playedTime / fullTime * 100;
-
-  function formatRemainedTime(full, played) {
-    const remainedTime = full - played;
-    const hour = Math.floor(remainedTime/3600);
-    const min = Math.floor((remainedTime - (hour*3600))/60);
-    const sec = remainedTime - (hour*3600) - (min*60);
-
-    function addZero(num) {
-      return `${num < 10 ? '0' : ''}${num}`;
-    }
-
-    if(hour > 0) return `${hour}:${addZero(min)}:${addZero(sec)}`;
-    else return `${min}:${addZero(sec)}`;
-  }
-
-  function formatUploadedPeriod(uploadedDate) {
-    const secs = Math.floor((new Date() - new Date(uploadedDate)) / 1000);
-    if (secs < 60) return '방금 전';
-
-    const mins = Math.floor(secs / 60);
-    if (mins < 60) return `${mins}분 전`;
-
-    const hours = Math.floor(mins / 60);
-    if (hours < 24) return `${hours}시간 전`;
-
-    const days = Math.floor(hours / 24);
-    if (days < 7) return `${days}일 전`;
-
-    const weeks = Math.floor(days / 7);
-    if(weeks < 5) return `${weeks}주 전`;
-
-    const months = Math.floor(days / 30);
-    if(months < 12) return `${months}개월 전`;
-
-    const years = Math.floor(days / 365);
-    return `${years}년 전`;
-  }
 
   return (
     <li className="list_item">
@@ -93,9 +58,9 @@ function VideoItem(props) {
           <a href="/#" className="information_wrap">
             {
               streaming
-              ? <span className="item">1.5만명 시청 중</span>
+              ? <span className="item">{ formatNumber(count) }명 시청 중</span>
               : <>
-                  <span className="item">조회수 9.4만회</span>
+                  <span className="item">조회수 { formatNumber(count) }회</span>
                   <span className="item">{ formatUploadedPeriod(uploadedDate) }</span>
                 </>
             }
