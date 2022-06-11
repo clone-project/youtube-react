@@ -1,6 +1,5 @@
 import { ReactComponent as IconSearch } from "../../assets/icons/gnb/search.svg"
 import { ReactComponent as IconBack } from "../../assets/icons/gnb/search-back.svg"
-import "./GnbSearch.module.scss";
 
 function GnbSearch() {
   return (

@@ -1,4 +1,4 @@
-import "./MiniSidebar.scss";
+import "../../assets/stylesheets/components/sidebar/MiniSidebar.scss";
 
 function MiniSidebar() {
   return (

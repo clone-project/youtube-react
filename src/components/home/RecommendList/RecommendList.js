@@ -1,6 +1,6 @@
 import React from "react";
 import VideoItem from "../VideoItem/VideoItem.js"
-import Videos from "../../mock/recommendVideo"
+import Videos from "../../../mock/recommendVideo"
 
 function RecommendList() {
   return (

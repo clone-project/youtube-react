@@ -1,6 +1,6 @@
 import { ReactComponent as LogoYoutube } from "../../assets/icons/gnb/logo-youtube.svg"
 import { ReactComponent as LogoPremium } from "../../assets/icons/gnb/logo-premium.svg"
-import "./GnbLogo.scss";
+import "../../assets/stylesheets/components/gnb/GnbLogo.scss";
 
 function GnbLogo(props) {
   return (

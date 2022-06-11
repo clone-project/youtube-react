@@ -1,13 +1,13 @@
-import {ReactComponent as IconLater} from "../../assets/icons/home/watch-later.svg";
-import {ReactComponent as IconAdd} from "../../assets/icons/home/add-list.svg";
-import {ReactComponent as IconAuthorized} from "../../assets/icons/home/authorized.svg";
-import {ReactComponent as IconOption} from "../../assets/icons/home/option.svg";
-import {ReactComponent as IconSave} from "../../assets/icons/home/save-playlist.svg";
-import {ReactComponent as IconUninterested} from "../../assets/icons/home/uninterested.svg";
-import {ReactComponent as IconNotRecommended} from "../../assets/icons/home/not-recommended.svg";
-import {ReactComponent as IconReport} from "../../assets/icons/home/report.svg";
+import {ReactComponent as IconLater} from "../../../assets/icons/home/watch-later.svg";
+import {ReactComponent as IconAdd} from "../../../assets/icons/home/add-list.svg";
+import {ReactComponent as IconAuthorized} from "../../../assets/icons/home/authorized.svg";
+import {ReactComponent as IconOption} from "../../../assets/icons/home/option.svg";
+import {ReactComponent as IconSave} from "../../../assets/icons/home/save-playlist.svg";
+import {ReactComponent as IconUninterested} from "../../../assets/icons/home/uninterested.svg";
+import {ReactComponent as IconNotRecommended} from "../../../assets/icons/home/not-recommended.svg";
+import {ReactComponent as IconReport} from "../../../assets/icons/home/report.svg";
 
-import { formatRemainedTime, formatNumber, formatUploadedPeriod } from "../../common";
+import { formatRemainedTime, formatNumber, formatUploadedPeriod } from "../../../common.js";
 
 function VideoItem(props) {
   const { data } = props;
