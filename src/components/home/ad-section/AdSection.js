@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { ReactComponent as IconClose } from "../../assets/icons/home/close.svg";
-import "./AdSection.scss";
-import AdData from "../../mock/advertise";
+import { ReactComponent as IconClose } from "../../../assets/icons/home/close.svg";
+import "../../../assets/stylesheets/components/home/AdSection.scss";
+import AdData from "../../../mock/advertise";
 
 function AdSection() {
   const [ isActive, setActive ] = useState(true);

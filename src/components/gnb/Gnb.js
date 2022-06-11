@@ -4,7 +4,7 @@ import GnbSearch from "./GnbSearch";
 import GnbAccount from "./GnbAccount";
 import GnbDropdown from "./GnbDropdown";
 import { ReactComponent as IconMenu } from "../../assets/icons/gnb/menu.svg"
-import "./Gnb.scss";
+import "../../assets/stylesheets/components/gnb/Gnb.scss";
 import UserData from "../../mock/user";
 import DropdownData from "../../mock/gnbDropdown";
 

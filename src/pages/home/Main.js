@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
-import Gnb from "../components/gnb/Gnb.js"
-import MiniSidebar from "../components/mini-sidebar/MiniSidebar.js"
-import Sidebar from "../components/sidebar/Sidebar.js"
-import AdSection from "./ad-section/AdSection.js"
-import RecommendList from "./RecommendList/RecommendList.js"
-import { ReactComponent as IconAuthorized } from "../assets/icons/home/authorized.svg"
-import { ReactComponent as IconOption } from "../assets/icons/home/option.svg"
-import { ReactComponent as IconAdd } from "../assets/icons/home/add-list.svg"
-import { ReactComponent as IconLater } from "../assets/icons/home/watch-later.svg"
-import { ReactComponent as IconSave } from "../assets/icons/home/save-playlist.svg"
-import { ReactComponent as IconUninterested } from "../assets/icons/home/uninterested.svg"
-import { ReactComponent as IconNotRecommended } from "../assets/icons/home/not-recommended.svg"
-import { ReactComponent as IconReport } from "../assets/icons/home/report.svg"
-import { ReactComponent as IconMix } from "../assets/icons/home/mix-list.svg"
-import { ReactComponent as IconPlay } from "../assets/icons/home/play.svg"
-import { ReactComponent as IconLike } from "../assets/icons/home/like.svg"
-import { ReactComponent as IconDislike } from "../assets/icons/home/dislike.svg"
-import { ReactComponent as IconComment } from "../assets/icons/home/comment.svg"
-import { ReactComponent as IconMore } from "../assets/icons/home/show-more.svg"
-import "./App.scss";
+import Gnb from "../../components/gnb/Gnb.js"
+import MiniSidebar from "../../components/sidebar/MiniSidebar.js"
+import Sidebar from "../../components/sidebar/Sidebar.js"
+import AdSection from "../../components/home/ad-section/AdSection.js"
+import RecommendList from "../../components/home/RecommendList/RecommendList.js"
+import { ReactComponent as IconAuthorized } from "../../assets/icons/home/authorized.svg"
+import { ReactComponent as IconOption } from "../../assets/icons/home/option.svg"
+import { ReactComponent as IconAdd } from "../../assets/icons/home/add-list.svg"
+import { ReactComponent as IconLater } from "../../assets/icons/home/watch-later.svg"
+import { ReactComponent as IconSave } from "../../assets/icons/home/save-playlist.svg"
+import { ReactComponent as IconUninterested } from "../../assets/icons/home/uninterested.svg"
+import { ReactComponent as IconNotRecommended } from "../../assets/icons/home/not-recommended.svg"
+import { ReactComponent as IconReport } from "../../assets/icons/home/report.svg"
+import { ReactComponent as IconMix } from "../../assets/icons/home/mix-list.svg"
+import { ReactComponent as IconPlay } from "../../assets/icons/home/play.svg"
+import { ReactComponent as IconLike } from "../../assets/icons/home/like.svg"
+import { ReactComponent as IconDislike } from "../../assets/icons/home/dislike.svg"
+import { ReactComponent as IconComment } from "../../assets/icons/home/comment.svg"
+import { ReactComponent as IconMore } from "../../assets/icons/home/show-more.svg"
+import "../../assets/stylesheets/pages/home/Main.scss";
 
 function App() {
   const [ isOpenMenu, setOpenMenu ] = useState(false);
@@ -403,7 +403,7 @@ function App() {
                 <li className="list_item">
                   <div className="video_area">
                     <a href="/#" className="link_video">
-                      <img src="https://i.ytimg.com/vi/_3IphE64yRA/hq720_live.jpg?sqp=COyezf8F-oaymwEZCNAFEJQDSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLCHr_7tvymB0FuAoTJK8xtBwfvo8A" className="thumbnail" width="36" height="36" alt="" />
+                      <img src="https://i.ytimg.com/vi/yzIX4upXDLU/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBCDSgKtt34y3wZa9wS4I2zbIAckQ" className="thumbnail" width="36" height="36" alt="" />
                         <div className="progress_bar">
                           {/*[D] 재생 이력 있는 스트리밍 영상은 width: 100%*/}
                           <div className="played_bar"></div>
@@ -691,7 +691,7 @@ function App() {
                 <li className="list_item">
                   <div className="video_area">
                     <a href="/#" className="link_video">
-                      <img src="https://i.ytimg.com/vi/_3IphE64yRA/hq720_live.jpg?sqp=COyezf8F-oaymwEZCNAFEJQDSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLCHr_7tvymB0FuAoTJK8xtBwfvo8A" className="thumbnail" width="36" height="36" alt="" />
+                      <img src="https://i.ytimg.com/vi/yzIX4upXDLU/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBCDSgKtt34y3wZa9wS4I2zbIAckQ" className="thumbnail" width="36" height="36" alt="" />
                       <div className="progress_bar">
                         {/*[D] 재생 이력 있는 스트리밍 영상은 width: 100%*/}
                         <div className="played_bar"></div>
@@ -982,7 +982,7 @@ function App() {
                 <li className="list_item">
                   <div className="video_area">
                     <a href="/#" className="link_video">
-                      <img src="https://i.ytimg.com/vi/_3IphE64yRA/hq720_live.jpg?sqp=COyezf8F-oaymwEZCNAFEJQDSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLCHr_7tvymB0FuAoTJK8xtBwfvo8A" className="thumbnail" width="36" height="36" alt="" />
+                      <img src="https://i.ytimg.com/vi/yzIX4upXDLU/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBCDSgKtt34y3wZa9wS4I2zbIAckQ" className="thumbnail" width="36" height="36" alt="" />
                       <div className="progress_bar">
                         {/*[D] 재생 이력 있는 스트리밍 영상은 width: 100%*/}
                         <div className="played_bar"></div>

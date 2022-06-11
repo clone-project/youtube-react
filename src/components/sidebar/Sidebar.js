@@ -1,6 +1,6 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react';
 import GnbLogo from "../gnb/GnbLogo";
-import "./Sidebar.scss";
+import "../../assets/stylesheets/components/sidebar/Sidebar.scss";
 import UserData from "../../mock/user";
 import Channel from "../../mock/channels";
 import {ReactComponent as IconLogin} from "../../assets/icons/gnb/account-login.svg";
